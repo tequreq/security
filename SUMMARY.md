@@ -91,6 +91,7 @@
 * [Password Cracking](password-cracking.md)
   * [Generate Custom Wordlist](generate_custom_wordlist.md)
   * [Offline Password Cracking](identify_hash_and_crack_it.md)
+    * [NTLM vs. NTLMv1/v2 a.ka. Net-NTLMv1/v2](identify_hash_and_crack_it/ntlm-vs-ntlmv1v2-aka-net-ntlmv1v2.md)
   * [Online Password Cracking](online_password_cracking.md)
   * [Pass the Hash - Reusing Hashes](pass_the_hash_-_reusing_hashes.md)
   * [Wordlists for CTFs](wordlists-for-ctfs.md)
