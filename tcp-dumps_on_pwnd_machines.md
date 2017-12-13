@@ -116,13 +116,25 @@ use auxiliary/sniffer/psnuffle
 
 ### Search for \*More\* interesting files \(passwords\)
 
- Just to clarify, I’m looking for text within the file, not in the file name.
+Just to clarify, I’m looking for text within the file, not in the file name.
 
 The following prints out the relative file name/path, matching content and line number \(-n\) in a recursive \(-r\), case insensitive \(-i\) search for the string password \(password\) in all files \(\*\).
 
 ```
 #from /
 grep -nri password *
+```
+
+If other factors are known like extenstions
+
+```
+grep -rnw 'directory' -e "pattern" --include={*.c,*.h} --exclude=*.o
+
+  -r                    : search recursively
+  -n                    : print line number
+  -w                    : match the whole word.
+  --include={*.c,*.h}   : Only search through the files which have .c or .h extensions.
+  --exclude=*.o         : Exclude searching in files with .o extensions.
 ```
 
 ## References

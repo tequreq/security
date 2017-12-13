@@ -108,6 +108,27 @@ which bash
 # Usually outputs: /bin/bash
 ```
 
+#### Pipes
+
+```
+>         : direct normal output.
+2>        : direct error output.
+&>        : direct all output.
+```
+
+#### Tar
+
+Archiving utility
+
+```
+tar
+ -c        : create archive
+ -t        : list the content of the file
+ -x        : extract the files
+ -j        : bzip2 format
+ -z        : gzip format
+```
+
 ## 2. Editing text
 
 First let's just clear out something about **standard streams**, or **I/O**-streams. Standard streams are the streams that are used to interact between the human computer-user and the machine. There are three standard streams: standard input \(stdin\), standard output \(stdout\), and standard error \(stderr\).The stdin stream can be seen as an abstractions of the real keyboard input. So when you issue a command/program that requires input the program does not read straight from the keyboard input, instead it reads from the file STDIN.
@@ -925,5 +946,5 @@ If there is a **hard block** it means that there is a physical switch on you mac
 [https://linuxjourney.com/](https://linuxjourney.com/)  
 [https://github.com/jlevy/the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
 
-https://bitvijays.github.io/LFF-ESS-P0B-LinuxEssentials.html
+[https://bitvijays.github.io/LFF-ESS-P0B-LinuxEssentials.html](https://bitvijays.github.io/LFF-ESS-P0B-LinuxEssentials.html)
 

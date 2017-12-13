@@ -85,6 +85,7 @@
   * [Loot and Enumerate](loot.md)
     * [Loot Windows](loot_windows_-_for_credentials_and_other_stuff.md)
     * [Loot Linux](tcp-dumps_on_pwnd_machines.md)
+      * [Fun with GREP](tcp-dumps_on_pwnd_machines/fun-with-grep.md)
   * [Persistence](persistence.md)
   * [Cover your tracks](clean_up.md)
 * [Password Cracking](password-cracking.md)
