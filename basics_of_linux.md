@@ -692,11 +692,11 @@ sudo apt-get update && sudo apt-get upgrade
 
 If you are using a distro that is Long Term Supported \(LTS\). You will not get the latest Kernel version, but you will get the latest Long Term Supported version.
 
-## 14. Logging
+## 12. Logging
 
 Logs can be viewed here on debian distros `/var/log/`
 
-## 16. Network basics
+## 13. Network basics
 
 ### Netstat - Find outgoing and incoming connections
 
@@ -940,6 +940,16 @@ rfkill unblock 0
 ```
 
 If there is a **hard block** it means that there is a physical switch on you machine that you need to switch off.
+
+## 14.Keyboard Shortcuts
+
+```
+Ctrl + a : Move to the start of line.
+Ctrl + e : Move to the end of line.
+Ctrl + w : Cut from cursor to previous whitespace.
+Ctrl + k : Cut from cursor to the end of line.
+Ctrl + y : Paste the last cut text.
+```
 
 ## References
 
