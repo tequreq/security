@@ -23,6 +23,12 @@ print decoded
 echo aGVsbG8gd2hpdGUgaGF0Cg== | base64 -d
 ```
 
+## Metasploit Slow Search Fix
+
+```
+db_rebuild_cache
+```
+
 ## Default passwords
 
 [http://www.defaultpassword.com/](http://www.defaultpassword.com/)

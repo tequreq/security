@@ -2,6 +2,14 @@
 
 We now have a low-privileges shell that we want to escalate into a privileged shell.
 
+## Windows Exploit Suggester
+
+```
+windows-exploit-suggester.py --update
+windows-exploit-suggester.py --database 2014-06-06-mssb.xlsx --systeminfo win7sp1-systeminfo.txt 
+The output shows either public exploits (E), or Metasploit modules (M) as indicated by the character value
+```
+
 ## Basic Enumeration of the System
 
 Before we start looking for privilege escalation opportunities we need to understand a bit about the machine. We need to know what users have privileges. What patches/hotfixes the system has.
@@ -430,7 +438,6 @@ vdmexploit.dll
 ### Using Metasploit
 
 So if you have a metasploit meterpreter session going you can run `getsystem`.
-
 
 ## Post modules
 

