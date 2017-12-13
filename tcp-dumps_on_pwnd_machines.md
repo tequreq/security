@@ -1,4 +1,3 @@
-
 # Loot Linux
 
 ## Passwords and hashes
@@ -55,12 +54,12 @@ First we need to figure out what interfaces the machine is using: `ifconfig`. Th
 
 ### Commands and flags
 
-Let's start with the basics.
+Let's start with the basics.  
 `tcpdump` - this command will output all network traffic straight to the terminal. Might be hard to understand if there is a lot of traffic.
 
 `-A` - stands for Ascii, and output it in ascii.
 
-`-w file.pcap` - the w-flag will save the output into the filename of your choice. The traffic is stored in pcap-format, which is the standard packet-analysis-format. 
+`-w file.pcap` - the w-flag will save the output into the filename of your choice. The traffic is stored in pcap-format, which is the standard packet-analysis-format.
 
 `-i any` - will capture traffic for all interfaces.
 
@@ -70,21 +69,22 @@ Let's start with the basics.
 
 `-s` - The default size that tcpdump captures is only 96 bytes. If you want it to capture more you have to define it yourself `-s0` gives you the whole packet.
 
-`-c` - count. Set how many packets you want to intercept. And then stop. Is useful if you have a non-interactive shell, this way to can capture packets without having to leave with `ctr-c`. 
+`-c` - count. Set how many packets you want to intercept. And then stop. Is useful if you have a non-interactive shell, this way to can capture packets without having to leave with `ctr-c`.
 
 `port 22` - only see traffic on a specific port.
 
-`-vvv` - Verbose. Depending on how verbose you want the output. 
+`-vvv` - Verbose. Depending on how verbose you want the output.
 
 ### Useful commands
 
-Lots of good stuff here
-http://www.rationallyparanoid.com/articles/tcpdump.html
+Lots of good stuff here  
+[http://www.rationallyparanoid.com/articles/tcpdump.html](http://www.rationallyparanoid.com/articles/tcpdump.html)
 
 ```
 tcpdump -i wlan0 -vvv -A | grep "GET"
 ```
-This will grep all GET from the wlan0 interface.
+
+This will grep all GET from the wlan0 interface.  
 This will not get any SSL-encrypted traffic.
 
 ```
@@ -104,7 +104,6 @@ Only record tcp-traffic
 tcpdump tcp -w file.pcap
 ```
 
-
 ### Sniffing for passwords
 
 Once we have dumped some of the traffic we can insert it into metasploit and run `psnuffle` on it. It can sniff passwords and usernames from **pop3**, **imap**, **ftp**, and **HTTP GET**. This is a really easy way to find usernames and passwords from traffic that you have already dumped, or are in the process of dumping.
@@ -113,17 +112,24 @@ Once we have dumped some of the traffic we can insert it into metasploit and run
 use auxiliary/sniffer/psnuffle
 ```
 
-https://www.offensive-security.com/metasploit-unleashed/password-sniffing/
+[https://www.offensive-security.com/metasploit-unleashed/password-sniffing/](https://www.offensive-security.com/metasploit-unleashed/password-sniffing/)
 
+### Search for \*More\* interesting files \(passwords\)
 
+The following prints out the relative file name/path, matching content and line number \(-n\) in a recursive \(-r\), case insensitive \(-i\) search for the string password \(password\) in all files \(\*\).
+
+```
+#from /
+grep -nri password *
+```
 
 ## References
 
+[http://www.thegeekstuff.com/2010/08/tcpdump-command-examples/](http://www.thegeekstuff.com/2010/08/tcpdump-command-examples/)
 
-http://www.thegeekstuff.com/2010/08/tcpdump-command-examples/
+[https://danielmiessler.com/study/tcpdump/](https://danielmiessler.com/study/tcpdump/)
 
-https://danielmiessler.com/study/tcpdump/
+[https://www.sans.org/reading-room/whitepapers/testing/post-exploitation-metasploit-pivot-port-33909](https://www.sans.org/reading-room/whitepapers/testing/post-exploitation-metasploit-pivot-port-33909)
 
-https://www.sans.org/reading-room/whitepapers/testing/post-exploitation-metasploit-pivot-port-33909
+[http://jvns.ca/blog/2016/03/16/tcpdump-is-amazing/](http://jvns.ca/blog/2016/03/16/tcpdump-is-amazing/)
 
-http://jvns.ca/blog/2016/03/16/tcpdump-is-amazing/
