@@ -14,6 +14,7 @@
   * [Scripting With Python](scripting_with_python.md)
     * [Python Fundamentals](python_fundamentals.md)
     * [Useful Scripts](connections.md)
+  * [GIT](git.md)
   * [Transferring Files](transfering_files2.md)
     * [Transfering Files on Linux](transfering_files.md)
     * [Transfering files on Windows](transfering_files_to_windows.md)

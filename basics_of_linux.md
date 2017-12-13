@@ -6,7 +6,7 @@ This is a huge chapter. I could divide it up in many subchapters but I like to h
 
 The shell, or the terminal is a really useful tool. Bash is the standard shell on most Linux distros.
 
-One really useful trick when working with bash is to search for old commands that you have used. You can access this search function by doing `ctr-r` in the terminal. 
+One really useful trick when working with bash is to search for old commands that you have used. You can access this search function by doing `ctr-r` in the terminal.
 
 ### Navigating
 
@@ -443,6 +443,17 @@ When you remove some package it might have requires some other dependencies. To 
 
 ```
 sudo apt-get autoremove
+```
+
+### Quick package notes
+
+```
+dpkg -i <Package>.deb          - Install package.
+dpkg -r <Package>              - Removes everything except configuration files.
+dpkg -P <Package>              - Removes configurations files too.
+dpkg -l                        - Shows the list of all installed packages.
+dpkg -L "Package name"         - Shows a list of files installed by specific packages.
+dpkg -S "File path"            - Shows the package to which a file belong to.
 ```
 
 ### Organizing your $path variable
@@ -909,14 +920,10 @@ rfkill unblock 0
 
 If there is a **hard block** it means that there is a physical switch on you machine that you need to switch off.
 
-## 17. Subnetting
-
-## 18. Routing
-
-## 21. DNS
-
 ## References
 
 [https://linuxjourney.com/](https://linuxjourney.com/)  
 [https://github.com/jlevy/the-art-of-command-line](https://github.com/jlevy/the-art-of-command-line)
+
+https://bitvijays.github.io/LFF-ESS-P0B-LinuxEssentials.html
 

@@ -131,11 +131,13 @@ dir /s
 
 ### Search for \*More\* interesting files \(passwords\)
 
+ Just to clarify, I’m looking for text within the file, not in the file name.
+
 The following prints out the relative file name/path and line number \(/n\) in a recursive \(/s\), case insensitive \(/i\) search for the string password \(password\) in all files \(\*\), ignoring files with non-printable characters \(/p\)
 
 ```
 #from c://
-findstr /n /s /i /p password * 
+findstr /n /s /i /p password *
 ```
 
 ## References
@@ -143,5 +145,5 @@ findstr /n /s /i /p password *
 This is a great post  
 [https://www.securusglobal.com/community/2013/12/20/dumping-windows-credentials/](https://www.securusglobal.com/community/2013/12/20/dumping-windows-credentials/)
 
-http://www.ericmmartin.com/finding-files-containing-a-certain-value/
+[http://www.ericmmartin.com/finding-files-containing-a-certain-value/](http://www.ericmmartin.com/finding-files-containing-a-certain-value/)
 

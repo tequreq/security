@@ -76,6 +76,17 @@ If you want to go to the next comma
 
 `G`
 
+## Additional Commands
+
+```
+:q                          - Quit.
+:wq                         - Save and close.
+:syntax on                  - Turn on Syntax highlighting for C programming and other languages.
+:history                    - Shows the history of the commands executed
+:set number                 - Turn on the line numbers.
+:set nonumber               - Turn off the line numbers.
+```
+
 ## Operators
 
 Operators are commands that do things. Like delete, change or copy.
@@ -139,6 +150,15 @@ The `"` means that we are not entering a registry. And the `*` means the OS-clip
 
 Here is all your vim-configuration.
 
+Contains optional runtime configuration settings to initialize Vim when it starts. Example: If you want Vim to have syntax on and line numbers on, whenever you open vi, enter syntax on and set number in this file.
+
+```
+##Sample contents of .vimrc
+
+syntax on
+set number
+```
+
 ## Plugins
 
 Install vundle here  
@@ -149,4 +169,8 @@ Install vundle here
 Add plugin to your .vimrc-file and then open vim and write
 
 `:PluginInstall`
+
+## References
+
+https://bitvijays.github.io/LFF-ESS-P0B-LinuxEssentials.html
 
