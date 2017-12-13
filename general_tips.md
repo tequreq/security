@@ -17,6 +17,12 @@ decoded = base64.b64decode("aGVqc2Fu")
 print decoded
 ```
 
+## Quick Base64 Decoder
+
+```
+echo aGVsbG8gd2hpdGUgaGF0Cg== | base64 -d
+```
+
 ## Default passwords
 
 [http://www.defaultpassword.com/](http://www.defaultpassword.com/)
@@ -25,5 +31,4 @@ print decoded
 
 You can forward X over SSH.  
 [http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html](http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html)
-
 
