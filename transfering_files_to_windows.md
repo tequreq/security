@@ -158,3 +158,5 @@ wine exe2bat.exe nc.exe nc.txt
 
 Now we just copy-past the text into our windows-shell. And it will automatically create a file called nc.exe
 
+
+
