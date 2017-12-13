@@ -2,8 +2,12 @@
 
 I will try to make this chapter into a reference library. So that you can just check in this chapter to see common ways to exploit certain common services. I will only discuss the most common, since there are quite a few.
 
-This is fucking awesome. if there is any ports here you dont find check out this guide.  
+This is awesome. if there is any ports here you dont find check out this guide.  
 [http://www.0daysecurity.com/penetration-testing/enumeration.html](http://www.0daysecurity.com/penetration-testing/enumeration.html)
+
+or
+
+[https://bitvijays.github.io/LFF-IPS-P2-VulnerabilityAnalysis.html](https://bitvijays.github.io/LFF-IPS-P2-VulnerabilityAnalysis.html)
 
 ## Port XXX - Service unknown
 
@@ -223,6 +227,12 @@ Now that we know how this works we can try to brute force it with medusa.
 medusa -h 192.168.1.101 -u admin -P wordlist.txt -M http -m DIR:/test -T 10
 ```
 
+### Additional Web Services
+
+The following has great enumeration techniques for various services such as Webmin, Jenkins, Tomcat, JBoss, Lotus Domino, IIS, and ESXi
+
+[https://bitvijays.github.io/LFF-IPS-P2-VulnerabilityAnalysis.html\#http](https://bitvijays.github.io/LFF-IPS-P2-VulnerabilityAnalysis.html#http)
+
 ## Port 88 - Kerberos
 
 Kerberos is a protocol that is used for network authentication. Different versions are used by \*nix and Windows. But if you see a machine with port 88 open you can be fairly certain that it is a Windows Domain Controller.
@@ -259,9 +269,24 @@ Obtain list of services running with RPC:
 rpcbind -p 192.168.1.101
 ```
 
+#### NFS Mount Scanner
+
+Check for the nfs mounts using port 111
+
+```
+use auxiliary/scanner/nfs/nfsmount
+services -p 111 -u -R
+```
+
+ The same can be achieved using showmount
+
+```
+showmount -a 192.168.1.105 110
+```
+
 ## Port 119 - NNTP
 
-Network time protocol.   
+Network time protocol.  
 It is used synchronize time. If a machine is running this server it might work as a server for synchronizing time. So other machines query this machine for the exact time.
 
 An attacker could use this to change the time. Which might cause denial of service and all around havoc.
@@ -492,7 +517,7 @@ There are a few snmp modules in metasploit that you can use. snmp\_enum can show
 ## Port 389/636 - Ldap
 
 Lightweight Directory Access Protocol.  
-This port is usually used for Directories. Directory her means more like a telephone-directory rather than a folder. Ldap directory can be understood a bit like the windows registry. A database-tree. Ldap is sometimes used to store usersinformation.   
+This port is usually used for Directories. Directory her means more like a telephone-directory rather than a folder. Ldap directory can be understood a bit like the windows registry. A database-tree. Ldap is sometimes used to store usersinformation.  
 Ldap is used more often in corporate structure.  
 Webapplications can use ldap for authentication. If that is the case it is possible to perform **ldap-injections** which are similar to sqlinjections.
 
@@ -568,7 +593,7 @@ If Postfix is run on it it could be vunerable to shellshock
 
 ## Port 631 - Cups
 
-Common UNIX Printing System has become the standard for sharing printers on a linux-network.   
+Common UNIX Printing System has become the standard for sharing printers on a linux-network.  
 You will often see port 631 open in your priv-esc enumeration when you run `netstat`. You can log in to it here: [http://localhost:631/admin](http://localhost:631/admin)
 
 You authenticate with the OS-users.
@@ -584,10 +609,10 @@ The default port for the Imap-protocol.
 ## Port 995 - POP3 Encrypten
 
 Port 995 is the default port for the **Post Office Protocol**.  
-The protocol is used for clients to connect to the server and download their emails locally.   
+The protocol is used for clients to connect to the server and download their emails locally.  
 You usually see this port open on mx-servers. Servers that are meant to send and recieve email.
 
-Related ports:   
+Related ports:  
 110 is the POP3 non-encrypted.
 
 25, 465
@@ -647,6 +672,10 @@ auxiliary/scanner/oracle/sid_brute
 
 Connect to the database with `sqlplus`
 
+Addiontal Enumeration Resource:
+
+[https://bitvijays.github.io/LFF-IPS-P2-VulnerabilityAnalysis.html\#oracle-port-1521](https://bitvijays.github.io/LFF-IPS-P2-VulnerabilityAnalysis.html#oracle-port-1521)
+
 References:
 
 [http://www.red-database-security.com/wp/itu2007.pdf](http://www.red-database-security.com/wp/itu2007.pdf)
@@ -682,9 +711,9 @@ This can be used to escalate privileges if it is not correct configured. Check c
 There are some exploits for this, so check it out. You can use the default Oracle users to access to it. You can use the normal ftp protocol to access it.
 
 Can be accessed through ftp.  
-Some default passwords here:   
+Some default passwords here:  
 [https://docs.oracle.com/cd/B10501\_01/win.920/a95490/username.htm](https://docs.oracle.com/cd/B10501_01/win.920/a95490/username.htm)  
-Name:   
+Name:  
 Version:
 
 Default logins:  
