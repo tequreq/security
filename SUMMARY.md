@@ -72,6 +72,7 @@
   * [Generate Shellcode](create_shellcode.md)
   * [Editing Exploits](editing-exploits.md)
   * [Compiling windows exploits](compiling-windows-exploits.md)
+  * [Dirty Cow](dirty-cow.md)
 * [Post Exploitation](post_exploitation.md)
   * [Spawning Shells](spawning_shells.md)
   * [Meterpreter for Post-Exploitation](getting_meterpreter_shell.md)
