@@ -278,7 +278,7 @@ use auxiliary/scanner/nfs/nfsmount
 services -p 111 -u -R
 ```
 
- The same can be achieved using showmount
+The same can be achieved using showmount
 
 ```
 showmount -a 192.168.1.105 110
@@ -719,6 +719,243 @@ Version:
 Default logins:  
 sys:sys  
 scott:tiger
+
+## Port 27017 and 27018 - Mongo DB
+
+### Metasploit
+
+#### MongoDB Login Utility
+
+Module attempts to brute force authentication credentials for MongoDB. Note that, by default, MongoDB does not require authentication. This can be used to check if there is no-authentication on the MongoDB by setting blank\_passwords to true. This can also be checked using the Nmap nse mongodb-brute
+
+```
+use auxiliary/scanner/mongodb/mongodb_login
+```
+
+Sample Output:
+
+```
+[*] Scanning IP: 10.169.xx.xx
+[+] Mongo server 10.169.xx.xx dosn't use authentication
+```
+
+### Nmap
+
+Nmap has three NSEs for mongo db databases
+
+#### Mongodb-info
+
+```
+nmap 10.169.xx.xx -p 27017 -sV --script mongodb-info
+
+Starting Nmap 7.01 (https://nmap.org) at 2016-03-26 02:23 IST
+Nmap scan report for mongod.example.com (10.169.xx.xx)
+Host is up (0.088s latency).
+PORT      STATE SERVICE VERSION
+27017/tcp open  mongodb MongoDB 2.6.9 2.6.9
+| mongodb-info:
+|   MongoDB Build info
+|     OpenSSLVersion =
+|     compilerFlags = -Wnon-virtual-dtor -Woverloaded-virtual -fPIC -fno-strict-aliasing -ggdb -pthread -Wall -Wsign-compare -Wno-unknown-pragmas -Winvalid-pch -pipe -Werror -O3 -Wno-unused-function -Wno-deprecated-declarations -fno-builtin-memcmp
+|     loaderFlags = -fPIC -pthread -Wl,-z,now -rdynamic
+|     version = 2.6.9
+|     ok = 1
+|     maxBsonObjectSize = 16777216
+|     debug = false
+|     bits = 64
+|     javascriptEngine = V8
+|     sysInfo = Linux build20.mongod.example.com 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 BOOST_LIB_VERSION=1_49
+|     versionArray
+|       1 = 6
+|       2 = 9
+|       3 = 0
+|       0 = 2
+|     allocator = tcmalloc
+|     gitVersion = df313bc75aa94d192330cb92756fc486ea604e64
+|   Server status
+|     opcounters
+|       query = 19752
+|       update = 1374
+|       insert = 71735056
+|       command = 78465013
+|       delete = 121
+|       getmore = 4156
+|       connections
+|         available = 795
+|       totalCreated = 4487
+|       current = 24
+|     uptimeMillis = 3487298933
+|     localTime = 1458938079849
+|     metrics
+|       getLastError
+|         wtime
+|           num = 0
+|           totalMillis = 0
+|     uptimeEstimate = 3455635
+|     version = 2.6.9
+|     uptime = 3487299
+|     network
+|       bytesOut = 17159001651
+|       numRequests = 78517212
+|       bytesIn = 73790966211
+|     host = nvt-prod-05
+|     mem
+|       supported = true
+|       virtual = 344
+|       resident = 31
+|       bits = 64
+|     pid = 25964
+|     extra_info
+|       heap_usage_bytes = 2798848
+|       page_faults = 16064
+|       note = fields vary by platform
+|     asserts
+|       warning = 1
+|       regular = 1
+|       rollovers = 0
+|       user = 11344
+|       msg = 0
+|     process = mongos
+|_    ok = 1
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 7.42 seconds
+
+```
+
+#### Mongodb-database
+
+To find the databases in the mongodb.
+
+```
+nmap 122.169.xx.xx -p 27017 -sV --script mongodb-databases.nse
+
+Starting Nmap 7.01 (https://nmap.org) at 2016-03-26 02:23 IST
+Nmap scan report for mongod.example.com (10.169.xx.xx)
+Host is up (0.090s latency).
+PORT      STATE SERVICE VERSION
+27017/tcp open  mongodb MongoDB 2.6.9
+| mongodb-databases:
+|   ok = 1
+|   databases
+|     1
+|       shards
+|       rs0 = 1
+|         sizeOnDisk = 1
+|       empty = true
+|       name = test
+|     0
+|       shards
+|         rs0 = 21415067648
+|         rs1 = 17122197504
+|       sizeOnDisk = 38537265152
+|       empty = false
+|       name = genprod
+|     3
+|       sizeOnDisk = 16777216
+|       empty = false
+|       name = admin
+|     2
+|       sizeOnDisk = 50331648
+|       empty = false
+|       name = config
+|   totalSize = 38537265153
+|_  totalSizeMb = 36752
+```
+
+#### Mongodb-BruteForce
+
+```
+nmap 10.169.xx.xx -p 27017 -sV --script mongodb-brute -n
+
+Starting Nmap 7.01 (https://nmap.org) at 2016-03-26 02:28 IST
+Nmap scan report for 122.169.xx.xx
+Host is up (0.086s latency).
+PORT      STATE SERVICE VERSION
+27017/tcp open  mongodb MongoDB 2.6.9
+|_mongodb-brute: No authentication needed
+```
+
+### Other
+
+This database can be connected using
+
+```
+mongo 10.169.xx.xx
+MongoDB shell version: 2.4.10
+connecting to: 122.169.xx.xx/test
+```
+
+Show DBS can be used to see the current databases;
+
+```
+mongos > show dbs
+admin        0.015625GB
+config       0.046875GB
+genprod      35.890625GB
+test (empty)
+```
+
+Use command can be used select the database
+
+```
+mongos > use admin
+switched to db admin
+```
+
+Show collections can be used to see the tables;
+
+```
+ mongos > show collections
+ nxae
+ system.indexes
+ system.users
+ system.version
+
+db.foo.find()                list objects in collection foo
+
+::
+
+ db.system.users.find()
+ { "_id" : "test.root", "user" : "root", "db" : "test", "credentials" : { "MONGODB-CR" : "d6zzzdb4538zzz339acd585fa9zzzzzz" }, "roles" : [  {  "role" : "dbOwner",  "db" : "test" } ] }
+ { "_id" : "genprod.root", "user" : "root", "db" : "genprod", "credentials" : { "MONGODB-CR" : "d6zzzdb4538zzz339acd585fa9zzzzzz" }, "roles" : [  {  "role" : "dbOwner",  "db" : "genprod" } ] }
+```
+
+## EthernetIP-TCP-UDP - Port 44818
+
+If we found TCP Port 44818, probably it’s running Ethernet/IP. Rockwell Automation/ Allen Bradley developed the protocol and is the primary maker of these devices, e.g. ControlLogix and MicroLogix, but it is an open standard and a number of vendors offer an EtherNet/IP interface card or solution.
+
+[Redpoint](https://github.com/digitalbond/Redpoint) has released a NSE for enumeration of these devices
+
+### Nmap
+
+#### enip-enumerate
+
+```
+nmap -p 44818 -n --script enip-enumerate x.x.x.x -Pn
+
+Starting Nmap 7.01 (https://nmap.org) at 2016-03-25 18:49 IST
+Nmap scan report for x.x.x.x
+Host is up (0.83s latency).
+PORT      STATE SERVICE
+44818/tcp open  EtherNet/IP
+| enip-enumerate:
+|   Vendor: Rockwell Automation/Allen-Bradley (1)
+|   Product Name: 1766-L32BXB B/10.00
+|   Serial Number: 0x40605446
+|   Device Type: Programmable Logic Controller (14)
+|   Product Code: 90
+|   Revision: 2.10
+|_  Device IP: 192.168.xx.xx
+
+```
+
+Rockwell Automation has
+
+* MicroLogix 1100: Default Username:password is administrator:ml1100
+* MicroLogix 1400: Default Username:password is administrator:ml1400 User manual is 
+  [MicroLogix 1400](http://literature.rockwellautomation.com/idc/groups/literature/documents/um/1766-um002_-en-p.pdf)
+   guest:guest is another default password.
 
 ## Port 3268 - globalcatLdap
 
