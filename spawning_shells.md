@@ -84,13 +84,21 @@ exec "/bin/sh"
 
 ```
 :!bash
-or
-:set shell=/bin/bash
-or
-:shell
-or
-:! /bin/bash
 ```
+
+or
+
+```
+:set shell=/bin/bash:shell
+```
+
+or execute
+
+```
+vi ;/bin/bash
+```
+
+once exit vi \(:q!\) we would get a shell. Helpful in scenarios where the user is asked to input which file to open
 
 **From within nmap**
 
