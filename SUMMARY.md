@@ -6,6 +6,7 @@
     * [Basics of Linux](basics_of_linux.md)
     * [Bash-scripting](bash-scripting.md)
     * [Vim](vim.md)
+    * [Man Pages](man-pages.md)
   * [Windows](windows.md)
     * [Basics of Windows](basics_of_windows.md)
     * [PowerShell](powershell.md)

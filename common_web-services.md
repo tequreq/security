@@ -149,6 +149,19 @@ The password to enter is the same as the passsword for the root user, and other 
 
 ## Wordpress
 
+If viewing the site is weird format wise. Probably due to wordpress using absolute paths instead of relatvie paths. Since hosts names are not in your /etc/hosts file yet. Add the IP and host and it should fix formatting and access to links.
+
+### Enumeration
+
+```
+wpscan --url http://TARGEThostname -e vt,tt,u,ap --log wpscan.log
+
+-e: enumerate
+-vt: only vulnerable themes
+-ap: all plugins
+-tt: timthumbs
+```
+
 ```
 wpscan -u http://cybear32c.lab
 ```

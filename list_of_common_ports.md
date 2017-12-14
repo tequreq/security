@@ -229,6 +229,8 @@ medusa -h 192.168.1.101 -u admin -P wordlist.txt -M http -m DIR:/test -T 10
 
 ### Additional Web Services
 
+View the page: [https://pittst0p.gitbooks.io/ctf/content/common\_web-services.html](https://pittst0p.gitbooks.io/ctf/content/common_web-services.html)
+
 The following has great enumeration techniques for various services such as Webmin, Jenkins, Tomcat, JBoss, Lotus Domino, IIS, and ESXi
 
 [https://bitvijays.github.io/LFF-IPS-P2-VulnerabilityAnalysis.html\#http](https://bitvijays.github.io/LFF-IPS-P2-VulnerabilityAnalysis.html#http)
