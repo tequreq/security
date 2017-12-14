@@ -1,4 +1,4 @@
-## Reverse
+## Reverse \(WIP\)
 
 ```
 do all in vm
@@ -15,5 +15,7 @@ do all in vm
 9) modify jumps to not take errors
 ```
 
+Links
 
+[http://bitvijays.github.io/LFC-BinaryExploitation.html](http://bitvijays.github.io/LFC-BinaryExploitation.html)
 
