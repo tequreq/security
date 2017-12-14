@@ -16,6 +16,8 @@ exiftool example.fileexample
 foremost -v examplefile
 or
 binwalk -e examplefile
+or
+steghide extract -sf examplefile
 ```
 
 ## Crack password of a zip without password
@@ -47,7 +49,7 @@ john --wordlist wordlist --format=keepass hashfile
 truecrack --truecrypt <Truecrypt File> -k SHA512 -w <Wordlist_File>
 ```
 
- and Veracrypt or cryptsetup to open the file.
+and Veracrypt or cryptsetup to open the file.
 
 ```
 cryptsetup open --type tcrypt <Truecrypt> <MountName>
