@@ -375,6 +375,12 @@ The next three letters are for read, `w` for write and `x` for execute. The firs
 
 [https://linuxjourney.com/lesson/file-permissions](https://linuxjourney.com/lesson/file-permissions)
 
+## Example Setuid
+
+```
+-rwsr-xr-x  user 0 Mar 6 10:45 myfile
+```
+
 ## 5. Processes
 
 To display information regarding the systems processes you can use the `ps` command.
