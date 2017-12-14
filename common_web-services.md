@@ -195,9 +195,10 @@ or
 if dont want to alert other CTF contestants / not break things
 WordPress Admin Access: Appearance->Editor->Theme Header
 paste php code after first line (<?php)
+Navigate to TargetIP/anysitepagewithwordpressheader or curl
 ```
 
-Note: My fav php shell is under 
+Note: My fav php shell is under
 
 ```
 /usr/share/webshells/php/php-reverse-shell.php
