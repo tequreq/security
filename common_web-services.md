@@ -189,7 +189,19 @@ wpscan -u http://target --enumerate users
 ```
 WordPress Admin Access: Appearance->Editor->404 Template
 Navigate to TargetIP/wordpress/wp-content/themes/<name of theme>/404.php
+
+or
+
+if dont want to alert other CTF contestants / not break things
+WordPress Admin Access: Appearance->Editor->Theme Header
+paste php code after first line (<?php)
 ```
 
+Note: My fav php shell is under 
 
+```
+/usr/share/webshells/php/php-reverse-shell.php
+```
+
+from [http://pentestmonkey.net/tools/web-shells/php-reverse-shell](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
 
