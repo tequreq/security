@@ -104,14 +104,30 @@ Comes from here: [https://gist.github.com/sckalath/a8fd4e754a72015aa0b8](https:/
 config.php
 ```
 
+**Apache**
+
+```
+/etc/apache2/apache2.conf
+/usr/local/etc/apache2/httpd.conf
+/etc/httpd/conf/httpd.conf
+```
+
+**MySql**
+
+```
+/var/lib/mysql/mysql/user.frm
+/var/lib/mysql/mysql/user.MYD
+/var/lib/mysql/mysql/user.MYI
+```
+
 **SSH**
 
 ```
-authorized_keys
-id_rsa
-id_rsa.keystore
-id_rsa.pub
-known_hosts
+/root/.ssh/authorized_keys
+/root/.ssh/id_rsa
+/root/.ssh/id_rsa.keystore
+/root/.ssh/id_rsa.pub
+/root/.ssh/known_hosts
 ```
 
 **Logs**
@@ -128,6 +144,10 @@ known_hosts
 /var/log/apache/access.log 
 /var/log/apache2/access.log
 /var/log/access_log
+
+/var/log/httpd/access_log     ------Red Hat/CentOS/Fedora Linux
+/var/log/apache2/access.log   ------Debian/Ubuntu
+/var/log/httpd-access.log     ------FreeBSD
 ```
 
 **User specific files**
@@ -243,6 +263,10 @@ c:\apache\php\php.ini
 c:\xampp\apache\bin\php.ini  
 c:\home2\bin\stable\apache\php.ini  
 c:\home\bin\stable\apache\php.ini
+c:\autoexec.bat
+c:\windows/system32/drivers/etc/hosts
+c:\windows/panther/unattended.xml
+c:\windows/panther/unattend/unattended.xml
 ```
 
 **Logs**
@@ -289,6 +313,9 @@ windows\repair\SAM
 ## Tools
 
 ```
+#fimap
+fimap -u "http://INSERTIPADDRESS/example.php"
+
 # Kadimus
 /root/Tools/Kadimus/kadimus -u http://INSERTIPADDRESS/example.php?page=
 
