@@ -1,11 +1,39 @@
-# Linux Exploit Suggester
+
+
+# Privilege Escalation
+
+## Easy Wins
+
+##### Check Sudo Rights
+
+Adding the second -l puts in it list format \(more details\)
+
+```
+sudo -l -l
+```
+
+##### Check Files containing word password
+
+```
+grep -irnw '/path/to/somewhere/' -e 'password'
+```
+
+```
+-i Makes it case insensitive
+-r is recursive
+-n is line number
+-w stands for match the whole word
+-e stands for pattern
+```
+
+#### Linux Exploit Suggester
 
 ```
 uname -a and uname -r
 Linux_Exploit_Suggester.pl -k 2.6
 ```
 
-# Privilege Escalation
+# Summary
 
 Once we have a limited shell it is useful to escalate that shells privileges. This way it will be easier to hide, read and write any files, and persist between reboots.
 
@@ -343,7 +371,7 @@ or
 nmap --interactive
 ```
 
-or 
+or
 
 ```
 sudo nmap -iL /etc/shadow 2>&1 | grep root
