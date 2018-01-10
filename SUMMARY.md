@@ -78,6 +78,7 @@
   * [Dirty Cow](dirty-cow.md)
   * [Shellshock](shellshock.md)
   * [Log Poisoning](log-poisoning.md)
+  * [Buffer Overflow Shell](buffer-overflow-shell.md)
 * [Post Exploitation](post_exploitation.md)
   * [Spawning Shells](spawning_shells.md)
   * [Meterpreter for Post-Exploitation](getting_meterpreter_shell.md)
