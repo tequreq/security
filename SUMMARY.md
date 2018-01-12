@@ -23,7 +23,7 @@
   * [General tips and tricks](general_tips.md)
 * [Recon and Information Gathering Phase](scanning.md)
   * [Passive Information Gatherig](passive_information_gatherig.md)
-    * Identify IP-addresses and Subdomains
+    * [Identify IP-addresses and Subdomains](identify-ip-addresses-and-subdomains.md)
       * Identify IP-addresses
       * [Find Subdomains](find_subdomains.md)
         * [DNS Basics](dns_basics.md)
