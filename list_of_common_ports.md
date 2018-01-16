@@ -579,6 +579,10 @@ Port 636 is used for SSL.
 
 There are also metasploit modules for Windows 2000 SP4 and Windows Xp SP0/SP1
 
+In printer config point LDAP server to kali, either open nc and listen for connect or use test LDAP connection
+
+https://www.ceos3c.com/2017/05/26/obtaining-domain-credentials-printer-netcat/
+
 ## Port 443 - HTTPS
 
 Okay this is only here as a reminder to always check for SSL-vulnerabilities such as heartbleed. For more on how to exploit web-applications check out the chapter on client-side vulnerabilities.
