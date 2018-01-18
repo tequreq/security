@@ -15,9 +15,45 @@ Note don't use -b and/or -r in a production environment
 
 
 
+**Responder 2.0:**
+
+Repsonder with NTLMv2
+
+https://www.trustwave.com/Resources/SpiderLabs-Blog/Responder-2-0---Owning-Windows-Networks-part-3/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 References:
 
-https://www.youtube.com/watch?v=sAr4PBR7EUE
-
-
+[https://www.youtube.com/watch?v=sAr4PBR7EUE](https://www.youtube.com/watch?v=sAr4PBR7EUE)
 
