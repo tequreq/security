@@ -77,6 +77,7 @@
   * [Compiling windows exploits](compiling-windows-exploits.md)
   * [Dirty Cow](dirty-cow.md)
   * [Shellshock](shellshock.md)
+  * [Responder](responder.md)
   * [Log Poisoning](log-poisoning.md)
   * [Buffer Overflow Shell](buffer-overflow-shell.md)
 * [Post Exploitation](post_exploitation.md)
