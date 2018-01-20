@@ -1,7 +1,5 @@
 # CTF Notes
 
-======================================================================================================
-
 This book is a collection of notes that I have picked up doing numerous CTFs. Its also a refence for general IT Security.
 
 This is heavily inspired by xapax and you can read his book on [https://xapax.gitbooks.io/security/content/](https://xapax.gitbooks.io/security/content/).
