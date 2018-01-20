@@ -177,6 +177,26 @@ Here are the documentations for SMTP
 
 [https://pentestlab.wordpress.com/2012/11/20/smtp-user-enumeration/](https://pentestlab.wordpress.com/2012/11/20/smtp-user-enumeration/)
 
+## Port 50 - DNS
+
+DNS running on a server indicates it may be multi-hosting sites
+
+Using dig and some config settings we can use the server itself to resolve the hostname of the server.
+
+```
+dig @10.13.37.10 -x 10.13.37.10
+-x reverse lookup
+```
+
+This resolves a hostname for the server. For example www.testsite.com
+
+```
+nano /etc/hosts/
+
+# add the following
+10.13.37.10 www.testsite.com
+```
+
 ## Port 69 - TFTP
 
 This is a ftp-server but it is using UDP.
@@ -581,7 +601,7 @@ There are also metasploit modules for Windows 2000 SP4 and Windows Xp SP0/SP1
 
 In printer config point LDAP server to kali, either open nc and listen for connect or use test LDAP connection
 
-https://www.ceos3c.com/2017/05/26/obtaining-domain-credentials-printer-netcat/
+[https://www.ceos3c.com/2017/05/26/obtaining-domain-credentials-printer-netcat/](https://www.ceos3c.com/2017/05/26/obtaining-domain-credentials-printer-netcat/)
 
 ## Port 443 - HTTPS
 
