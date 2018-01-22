@@ -177,14 +177,14 @@ Here are the documentations for SMTP
 
 [https://pentestlab.wordpress.com/2012/11/20/smtp-user-enumeration/](https://pentestlab.wordpress.com/2012/11/20/smtp-user-enumeration/)
 
-## Port 50 - DNS
+## Port 53 - DNS
 
 DNS running on a server indicates it may be multi-hosting sites
 
 Using dig and some config settings we can use the server itself to resolve the hostname of the server.
 
 ```
-dig @10.13.37.10 -x 10.13.37.10
+dig @10.13.37.10 -x 10.13.37.10
 -x reverse lookup
 ```
 
