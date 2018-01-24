@@ -40,7 +40,7 @@ You can forward X over SSH.
 
 ### Metasploit shell upgrade
 
- In metasploit framework, if we have a shell \( you should try this also, when you are trying to interact with a shell and it dies \(happened in a VM\), we can upgrade it to meterpreter by using sessions -u
+In metasploit framework, if we have a shell \( you should try this also, when you are trying to interact with a shell and it dies \(happened in a VM\), we can upgrade it to meterpreter by using sessions -u
 
 ```
 sessions -h
@@ -51,6 +51,14 @@ Active session manipulation and interaction.
 OPTIONS:
 
 -u <opt>  Upgrade a shell to a meterpreter session on many platforms
+```
+
+**Using a list in a metasploit module that does not allow it**
+
+```
+In the RHOSTS field enter:
+
+file://PATHTOIPADDRESSES
 ```
 
 

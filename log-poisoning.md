@@ -1,16 +1,12 @@
 # Log Poisoning
 
-
-
 **Colasoft** **Packet Player**
 
 Is a packet replayer which allows users to open captured packet trace files and play them back in the network
 
 Can replay fake traffic into a connected network.
 
-http://www.colasoft.com/packet\_player/
-
-
+[http://www.colasoft.com/packet\_player/](http://www.colasoft.com/packet_player/)
 
 **Scenario:**
 
