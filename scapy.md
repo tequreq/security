@@ -16,6 +16,12 @@ Tool for creating packets and packet manipulation
 >>>response[0][0]
 ```
 
+Send packet with a payload
+
+```
+>>>packet=(IP(dst="10.10.10.50")/TCP(dport=22)/"thisisthetestpayload")
+```
+
 To make a loop \(overflow\)--once per second
 
 ```
