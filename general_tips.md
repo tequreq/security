@@ -38,7 +38,7 @@ db_rebuild_cache
 You can forward X over SSH.  
 [http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html](http://www.vanemery.com/Linux/XoverSSH/X-over-SSH2.html)
 
-### Metasploit shell upgrade
+## Metasploit shell upgrade
 
 In metasploit framework, if we have a shell \( you should try this also, when you are trying to interact with a shell and it dies \(happened in a VM\), we can upgrade it to meterpreter by using sessions -u
 
@@ -53,12 +53,19 @@ OPTIONS:
 -u <opt>  Upgrade a shell to a meterpreter session on many platforms
 ```
 
-**Using a list in a metasploit module that does not allow it**
+## **Using a list in a metasploit module that does not allow it**
 
 ```
 In the RHOSTS field enter:
 
 file://PATHTOIPADDRESSES
+```
+
+## **Change Nmap modes while scanning**
+
+```
+v   --increase verbosity
+p   --turn on packets
 ```
 
 
