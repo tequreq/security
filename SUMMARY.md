@@ -69,6 +69,7 @@
   * [Automated Vulnerability Scanners](automated_vulnerability_scanners.md)
 * [Exploiting](exploiting.md)
   * [Social Engineering - Phishing](social_engineering_-_phishing.md)
+  * [Tips & Tricks](tips-and-tricks.md)
   * [Default Layout of Apache on Different Versions](default_layout_apache_on_different_versiont.md)
   * [Shells](reverse-shell.md)
   * [Webshell](webshell.md)
