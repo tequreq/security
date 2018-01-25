@@ -68,5 +68,19 @@ v   --increase verbosity
 p   --turn on packets
 ```
 
+## Issues with Exploits \(try viewing in Burp\)
+
+```
+Options->Add(proxy Listeners)->
+Bind to port (i.e.local port to bind)(e.g.8500)->
+Request Handling->
+Redirect to host(i.e.IP of target)(e.g.8500)->
+Redirect to port(i.e.Port of target)(e.g.8500)
+
+then browser
+localhost:8500
+or run the exploit again
+```
+
 
 
