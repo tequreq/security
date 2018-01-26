@@ -68,6 +68,12 @@ v   --increase verbosity
 p   --turn on packets
 ```
 
+## **Nmap host enumeration**
+
+```
+-sn --determine alive hosts
+```
+
 ## Issues with Exploits \(try viewing in Burp\)
 
 ```

@@ -36,5 +36,12 @@ m-file permissions
 n-newline
 ```
 
+### Searchsploit Details
+
+```
+-X details of exploits
+-w exploitdb web entry
+```
+
 
 
