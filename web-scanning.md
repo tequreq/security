@@ -3,6 +3,10 @@
 ## TLDR
 
 ```
+#dirsearch
+/opt/dirsearch/dirsearch.py -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+
+
 # Dirb
 dirb https://192.168.1.101
 
