@@ -44,6 +44,12 @@ neo-security.xml and password.properties
 
 ## Drupal
 
+Use droopescan \(note takes a long time!\)
+
+```
+droopescan scan drupal -u 10.10.10.9
+```
+
 ## Elastix
 
 Full of vulnerabilities. The old versions at least.
