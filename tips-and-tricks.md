@@ -6,7 +6,7 @@
 /dev/shm
 ```
 
-better than /tmp as it writes to memory not disk
+better than /tmp as it writes to memory not disk \(sometimes /dev/shm may restrict suid changes\)
 
 ### A good webshell is found here
 
