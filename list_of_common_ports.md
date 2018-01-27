@@ -205,7 +205,7 @@ nslookup
 attempt zone transfer
 
 ```
-dig axfr @ 10.13.37.10 testsite.com 
+dig axfr @ 10.13.37.10 testsite.com
 ```
 
 ## Port 69 - TFTP
@@ -258,9 +258,16 @@ Now that we know how this works we can try to brute force it with medusa.
 medusa -h 192.168.1.101 -u admin -P wordlist.txt -M http -m DIR:/test -T 10
 ```
 
-### Additional Web Services
+### Attempts SQLmap on login pages
 
-View the page: [https://pittst0p.gitbooks.io/ctf/content/common\_web-services.html](https://pittst0p.gitbooks.io/ctf/content/common_web-services.html)
+```
+add dummy username and password field and capture the POST request in Burp.
+Copy the request to a file and delete all the spaces except for the one before the username and password fields.
+
+sqlmap -r loginrequest.txt
+```
+
+### Additional Web Services
 
 The following has great enumeration techniques for various services such as Webmin, Jenkins, Tomcat, JBoss, Lotus Domino, IIS, and ESXi
 
