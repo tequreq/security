@@ -197,6 +197,17 @@ nano /etc/hosts/
 10.13.37.10 www.testsite.com
 ```
 
+```
+nslookup
+> server 10.13.37.10
+```
+
+attempt zone transfer
+
+```
+dig axfr @ 10.13.37.10 testsite.com 
+```
+
 ## Port 69 - TFTP
 
 This is a ftp-server but it is using UDP.
