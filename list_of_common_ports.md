@@ -519,7 +519,15 @@ IMAP is a lot like pop3. But with IMAP you can access your email from various de
 
 Port 993 is the secure port for IMAP.
 
-If you have IMAP creds try using the application evolution to interact.
+If you have IMAP creds try using the application **thunderbird **or **evolution** to interact.
+
+```
+Thunderbird
+create new account
+username
+username@IPADDRESSTARGET
+password
+```
 
 ## Port 161 and 162 - SNMP
 
