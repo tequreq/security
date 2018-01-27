@@ -88,5 +88,11 @@ localhost:8500
 or run the exploit again
 ```
 
+## Quick determination if executables exist
+
+```
+which nc
+```
+
 
 
