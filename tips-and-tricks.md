@@ -44,6 +44,7 @@ searchsploit -x /php/webapps/IDXXX.php
 -x details of exploits (examine the exploit)
 -w exploitdb web entry
 -p shows full path of exploit and copies to clipboard
+-m mirror (copy to current working directory)
 ```
 
 
