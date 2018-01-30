@@ -36,7 +36,7 @@ dirbuster
 
 wordlist=/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 
-file extensions=php, pl, sh, asp, html, json, py, cfm, aspx, rb, cgi
+file extensions=php,txt,pl,sh,asp,aspx,html,json,py,cfm,rb,cgi
 ```
 
 ### OWASP ZAP
