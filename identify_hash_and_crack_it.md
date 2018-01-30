@@ -39,6 +39,12 @@ Look for the specific type of hash you want to crack in the list produced by the
 hashcat --help
 ```
 
+Example Hashes
+
+```
+https://hashcat.net/wiki/doku.php?id=example_hashes
+```
+
 My hash was a Apache md5, so I will use the corresponding code for it, `1600`
 
 `-a 0` - straight
@@ -51,6 +57,14 @@ My hash was a Apache md5, so I will use the corresponding code for it, `1600`
 
 ```
 hashcat -m 11 -a 0 -o found.txt admin.hash /usr/share/hashcat/rules/rockyou-30000.rule
+```
+
+### You got a sick GPU bro?
+
+`-a 0` - Brute-force
+
+```
+hashcat64.exe -m 11 -a 3 -o found2.txt admin.hash
 ```
 
 ### John the ripper
