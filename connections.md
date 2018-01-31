@@ -109,7 +109,7 @@ Read more about parallellism here: [http://chriskiehl.com/article/parallelism-in
 
 ```
 import socket
-  
+
 target_host = "www.google.com"  
 target_port = 80  
 
@@ -147,8 +147,6 @@ data, addr = client.recvfrom(4096)
 
 print data
 ```
-
-## 
 
 ## Connecting to SMTP
 
