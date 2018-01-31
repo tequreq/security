@@ -445,10 +445,6 @@ vdmallowed.exe
 vdmexploit.dll
 ```
 
-### Using Metasploit
-
-So if you have a metasploit meterpreter session going you can run `getsystem`.
-
 ## Post modules
 
 Some interesting metasploit post-modules

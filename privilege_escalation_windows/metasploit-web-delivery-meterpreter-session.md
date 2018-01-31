@@ -1,7 +1,5 @@
 ## Metasploit Web Delivery
 
-\(lazy version of uploading php-reverse-shell.php from pentest monkey\)
-
 [Metasploit Web Delivery](https://www.offensive-security.com/metasploit-unleashed/web-delivery/)
 
 Metasploit’s Web Delivery Script is a versatile module that creates a server on the attacking machine which hosts a payload. When the victim connects to the attacking server, the payload will be executed on the victim machine. This module has a powershell method which generates a string which is needed to be executed on remote windows machine.
