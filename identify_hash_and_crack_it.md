@@ -41,9 +41,7 @@ hashcat --help
 
 Example Hashes
 
-```
-https://hashcat.net/wiki/doku.php?id=example_hashes
-```
+[https://hashcat.net/wiki/doku.php?id=example\_hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
 My hash was a Apache md5, so I will use the corresponding code for it, `1600`
 
