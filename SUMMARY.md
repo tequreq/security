@@ -50,6 +50,7 @@
       * [Nosql-Injections](nosql-injections.md)
       * [XML External Entity Attack](xml_external_entity_attack.md)
       * [Command Injection](command-injection.md)
+      * [Cookie](cookie.md)
       * [Bypass File Upload Filtering](bypass_image_upload.md)
       * [Exposed Version Control](exposed_version_control.md)
       * Directory Traversal Attack
