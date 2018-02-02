@@ -65,7 +65,7 @@ So you need to authenticate before you can access the vulnerable paramter.
 You just cature the request using burp suite, and save the requiest in a file. Then your run
 
 ```
-sqlmap -r request.txt
+sqlmap -r request.txt --level 4 --risk 3
 ```
 
 Since the cookie is saved in the reuqest sqlmap can do it.
