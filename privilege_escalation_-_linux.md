@@ -1,5 +1,3 @@
-
-
 # Privilege Escalation
 
 ## Easy Wins
@@ -592,6 +590,23 @@ If you have access to an account with sudo-rights but you don't have its passwor
 /dev/shm
 /var/spool/vbox
 /var/spool/samba
+```
+
+## PATH Abuse
+
+```
+access to abuse executable calls based on the environment path
+
+Example: script that doesn't use absolute paths
+
+Create a new execuabtle with same name (cat for example) that has a malicious script in it
+(Example: #!/bin/sh
+/bin/sh)--assuming script will execute with root permissions
+
+#export PATH='pwd' :$PATH
+--this should put your current directory as the first path to check
+#echo $PATH
+--use the the echo to check if successful
 ```
 
 ## References
