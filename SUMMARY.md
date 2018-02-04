@@ -116,7 +116,7 @@
   * [Reverse Engineering](forensics/reverse-engineering.md)
   * [Decompile](forensics/decompile.md)
   * [Data Extraction](forensics/data-extraction.md)
-  * Audio Stego
+  * [Audio Stego](forensics/audio-stego.md)
 * [Wifi](wifi.md)
   * [WEP](wep.md)
   * [WPS](wps.md)
