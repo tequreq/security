@@ -14,10 +14,8 @@ dirb https://192.168.1.101
 
 gobuster -u 10.10.10.X -l -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php -t 20
 
-- remove relevant responde codes (403 for example)
+- specify relevant response codes
 gobuster -u http://192.168.1.101 -w /usr/share/seclists/Discovery/Web_Content/common.txt -s '200,204,301,302,307,403,500' -e
-
-
 ```
 
 ## About
