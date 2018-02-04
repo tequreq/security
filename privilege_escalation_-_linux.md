@@ -219,6 +219,7 @@ find
 
 ```
 #Find SUID
+find / -perm -4000 2>dev/null | xargs ls -la
 find / -perm -u=s -type f 2>/dev/null
 
 #Find GUID
