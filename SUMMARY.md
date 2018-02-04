@@ -117,6 +117,7 @@
   * [Decompile](forensics/decompile.md)
   * [Data Extraction](forensics/data-extraction.md)
   * [Audio Stego](forensics/audio-stego.md)
+  * [Crypto](forensics/crypto.md)
 * [Wifi](wifi.md)
   * [WEP](wep.md)
   * [WPS](wps.md)
