@@ -70,8 +70,8 @@ more < FileName:StreamName
 
 for example:
 
-more < hm.txt:root.txt
+more < hmm.txt:root.txt
 ```
 
-https://www.howtogeek.com/howto/windows-vista/stupid-geek-tricks-hide-data-in-a-secret-text-file-compartment/
+[https://www.howtogeek.com/howto/windows-vista/stupid-geek-tricks-hide-data-in-a-secret-text-file-compartment/](https://www.howtogeek.com/howto/windows-vista/stupid-geek-tricks-hide-data-in-a-secret-text-file-compartment/)
 
