@@ -50,6 +50,11 @@ net group /domain <Group Name>
 netsh firewall show state
 netsh firewall show config
 
+netsh Advfirewall set allprofiles state off
+netsh Advfirewall set allprofiles state on
+netsh Advfirewall show allprofiles 
+
+
 # Network
 ipconfig /all
 route print
