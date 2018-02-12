@@ -132,6 +132,12 @@ If you are looking for live examples just google this:
 inurl:webdav site:com
 ```
 
+Test basic options
+
+```
+davtest -url http://192.168.1.101 
+```
+
 Test if it is possible to upload and execute files with webdav.
 
 ```
