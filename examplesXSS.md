@@ -46,7 +46,7 @@ req2.setRequestHeader('Content-Type', 'application/x-ww-form-urlencoded');
 req2.send(params);
 
 
-should create url encodeded data file
+should create url encodeded data file, can grab cookie from
 ```
 
 
