@@ -20,6 +20,14 @@ or
 steghide extract -sf examplefile
 ```
 
+## Additional
+
+```
+zsteg : detect stegano-hidden data in PNG & BMP
+pngcheck : pngcheck verifies the integrity of PNG, JNG and MNG files (by checking the internal 32-bit CRCs [checksums] and decompressing the image data); it can optionally dump almost all of the chunk-level information in the image in human-readable form.
+Mediaextract : Extracts media files (AVI, Ogg, Wave, PNG, …) that are embedded within other files.
+```
+
 ## Crack password of a zip without password
 
 ```
