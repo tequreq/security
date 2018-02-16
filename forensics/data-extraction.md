@@ -15,7 +15,7 @@ exiftool example.fileexample
 ```
 foremost -v examplefile
 or
-binwalk -e examplefile
+binwalk -Me examplefile
 or
 steghide extract -sf examplefile
 ```
