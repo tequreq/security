@@ -66,7 +66,7 @@
         * [Examples](examplesXSS.md)
         * [DOM-based XSS](dom-based-xss.md)
       * [Browser Vulnerabilities](browser_vulnerabilities.md)
-      * HTML-Injection
+      * [HTML-Injection](html-injection.md)
   * [Automated Vulnerability Scanners](automated_vulnerability_scanners.md)
 * [Exploiting](exploiting.md)
   * [Social Engineering - Phishing](social_engineering_-_phishing.md)

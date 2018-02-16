@@ -214,6 +214,16 @@ This is a ftp-server but it is using UDP.
 
 ## Port 80 - HTTP
 
+```
+basic enum (robots, login, admin)
+nikto
+hydra
+gobuster
+dirbuster
+gobuster
+sqlmap
+```
+
 Info about web-vulnerabilities can be found in the next chapter `HTTP - Web Vulnerabilities`.
 
 We usually just think of vulnerabilities on the http-interface, the web page, when we think of port 80. But with `.htaccess` we are able to password protect certain directories. If that is the case we can brute force that the following way.
