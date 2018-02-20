@@ -2,6 +2,8 @@
 
 We now have a low-privileges shell that we want to escalate into a privileged shell.
 
+Mubix Post exploitation commands:[ https://docs.google.com/document/d/1U10isynOpQtrIK6ChuReu-K1WHTJm4fgG3joiuz43rw/edit](https://docs.google.com/document/d/1U10isynOpQtrIK6ChuReu-K1WHTJm4fgG3joiuz43rw/edit)
+
 ## Windows Exploit Suggester
 
 ```
