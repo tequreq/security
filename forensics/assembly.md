@@ -26,9 +26,7 @@ use `gcc -g program.c -o whatever`
 
 the -g option gives the debugger the source code. Only useful if you have it obviously.
 
-gdb -q                    \#starts in quiet mode, gets rid of intro messages
-
-gdb whatever        \#starts gdb on the whatever file
+gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mode, gets rid of intro messages
 
 \(gdb\) break main   \#sets a breakpoint on the main function
 
