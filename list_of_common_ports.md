@@ -741,6 +741,18 @@ Default port for Microsoft SQL .
 sqsh -S 192.168.1.101 -U sa
 ```
 
+# Dbeaver
+
+application that interfaces with multiple databases so you don't have to remember the different syntax for the databases
+
+covers mssql, mysql, oracle, etcc...
+
+```
+dbeaver
+
+useful if you have some creds to try
+```
+
 # Execute commands
 
 ```bash
