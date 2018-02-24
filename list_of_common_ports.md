@@ -402,6 +402,12 @@ Alice      ---the user
 10.10.10.X ---the IP address
 ```
 
+or
+
+```
+winexe -U TEST.local/Alice //10.10.10.X cmd.exe
+```
+
 ### Scanning with nmap
 
 Scanning for smb with Nmap
