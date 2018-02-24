@@ -382,12 +382,24 @@ Here is a good guide for how to configure samba:
 mount -t cifs -o user=USERNAME,sec=ntlm,dir_mode=0077 "//10.10.10.10/My Share" /mnt/cifs
 ```
 
-### Connectin with PSExec
+### Connecting with PSExec
 
 If you have credentials you can use psexec you easily log in. You can either use the standalone binary or the metasploit module.
 
 ```
 use exploit/windows/smb/psexec
+```
+
+or
+
+sometimes this works when the module does not
+
+```
+/usr/share/doc/python-impacket/examples/psexec.py TEST.local/Alice@10.10.10.x cmd.exe
+
+TEST.local  ---the domain
+Alice      ---the user
+10.10.10.X ---the IP address
 ```
 
 ### Scanning with nmap
