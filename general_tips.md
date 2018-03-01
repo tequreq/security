@@ -1,5 +1,11 @@
 # General tips
 
+## General CTF data analysis \(encoding, hash identifier, etc.\)
+
+```
+https://gchq.github.io/CyberChef/
+```
+
 ## Disposable email
 
 If you are signing up for a lot of accounts you can use a disposable email. You just enter the email account you want for that second, and then you can view it. But remember, so can everyone else.  
