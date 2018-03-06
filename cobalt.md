@@ -32,7 +32,21 @@ beacon:Invoke-FindLocalAdminAccess
 Login to target where we are local admin
 
 ```
-Right Click Target -->Login -->psexec (change Listener to SMB beacon)(choose a session)(user session's current token)
+Right Click Target -->Login -->psexec (change Listener to SMB beacon)(choose a session)
+(user session's current token)
+```
+
+Get token from processes
+
+```
+Right Click Target -->Explore-->Process List-->Steal Token
+```
+
+Create Multiple beacons on targets
+
+```
+Select the targets --> Right Click -->Login -->psexec --> choose a beacon with an elevated token-->
+(user session's current token)-->Launch
 ```
 
 
