@@ -49,5 +49,17 @@ Select the targets --> Right Click -->Login -->psexec --> choose a beacon with a
 (user session's current token)-->Launch
 ```
 
+Golden Ticket Generation
+
+```
+Need four items
+1)User
+2)Domain
+3)Domain SID
+4)KRBTGT Hash
+
+shell whoami /user to obtain SID
+```
+
 
 
