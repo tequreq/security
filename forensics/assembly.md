@@ -38,13 +38,19 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) x/i $eip      \#examines the value of eip as hexadecimal
 
+\(gdb\) x/32x $esp \#examines the next 32 after esp
+
+\(gdb\) x/x $ebp   \#examines the ebp location
+
 \(gdb\) nexti        \#steps through the program to the next instruction
 
 \(gdb\) info register eip    \#doing this again shows us the new value after step
 
 \(gdb\) x/i $eip      \#doing this again examines the new value of eip as hexadecimal after step
 
-### 
+\(gdb\) b \*0x0804861A   \#puts a breakpoint at address 0x0804861A
+
+note gets functions are vulnerable
 
 ### 
 
@@ -61,6 +67,8 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 ### 
 
 ### References
+
+https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/
 
 hacking the art of exploitation
 
