@@ -58,7 +58,12 @@ Need four items
 3)Domain SID
 4)KRBTGT Hash
 
-shell whoami /user to obtain SID
+3) shell whoami /user to obtain SID (also provides 1 & 2)
+4) obtained from a previous compromise (i.e. NTLM hashdump)
+
+With that Right Click-->Access-->Golden Ticket-->Input Four fields-->Build
+
+Verify it works: shell dir \\[DC]\C$
 ```
 
 
