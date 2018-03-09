@@ -6,3 +6,5 @@ Links
 
 [https://writeups.easyctf.com/binary-exploitation/doubly-dangerous-110-points.html](https://writeups.easyctf.com/binary-exploitation/doubly-dangerous-110-points.html)
 
+https://samsclass.info/127/127\_S18.shtml\#lecture
+
