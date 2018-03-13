@@ -200,7 +200,7 @@ wpscan -u http://target --enumerate users
 
 ```
 WordPress Admin Access: Appearance->Editor->404 Template
-Navigate to TargetIP/wordpress/wp-content/themes/<name of theme>/404.php
+Navigate to TargetIP/wordpress/wp-content/themes/[twentysixteen](name of theme)/404.php
 
 or
 
