@@ -1101,7 +1101,7 @@ Always test the following:
 
 Username: root
 
-Password: root
+Password: root or mysql
 
 ```
 mysql --host=192.168.1.101 -u root -p
@@ -1119,6 +1119,12 @@ ERROR 1130 (HY000): Host '192.168.0.101' is not allowed to connect to this MySQL
 ```
 
 This occurs because mysql is configured so that the root user is only allowed to log in from 127.0.0.1. This is a reasonable security measure put up to protect the database.
+
+### Get passwords
+
+```
+mysql --user=root --password=msyql --all-databases > /tmp/dump.sql
+```
 
 ### Configuration files
 
