@@ -19,7 +19,9 @@ while true; do
 done
 ```
 
+Note if trying to echo quotes to a script use single quotes
 
+for example
 
-
+echo ' "Hello World" ' &gt; test.txt
 
