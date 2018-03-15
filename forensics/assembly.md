@@ -54,7 +54,7 @@ note gets functions are vulnerable
 
 ### Notes
 
-The values between ebp and esp is the stack
+The values between ebp \(bottom of stack frame\) and esp \(top of stack frame\) is the stack
 
 ### 
 
