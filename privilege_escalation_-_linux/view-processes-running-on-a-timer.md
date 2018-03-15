@@ -1,7 +1,5 @@
 If see files with a timestamp but nothing is in cron maybe there is a rogue script running on a consistent basis try the following to find
 
-
-
 IPPSEC--Nineveh
 
 ```
@@ -10,16 +8,18 @@ IPPSEC--Nineveh
 #Loop by line
 IFS=$'\n'
 
-old_process=$(ps -eo command)
+old_ps=$(ps -eo command)
 
 #infinite loop
 while true; do
- new_process=$(ps -eo command)
- diff <(echo "$old_process") <(echo "new_process")
- sleep 1
- old_process=$new_process
+  new_ps=$(ps -eo command)
+  diff <(echo "$old_ps") <(echo "$new_ps")
+  sleep 1
+  old_ps=$new_ps
 done
 ```
+
+
 
 
 
