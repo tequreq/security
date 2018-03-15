@@ -11,7 +11,6 @@ for item in my_list:
 my_list.append("addMe")
 ```
 
-
 ## Modules
 
 Always good to modular your code.
@@ -19,7 +18,6 @@ Always good to modular your code.
 **module1.py**
 
 ```python
-
 def addNumbers(numberOne, numberTwo):
     return numberOne + numberTwo
 ```
@@ -33,7 +31,6 @@ total = module1.addNumbers(1,2)
 print total
 ```
 
-
 ## Pip - package management
 
 Pip is the python package manager. It ca be used to download other modules.
@@ -44,9 +41,17 @@ Install pip
 sudo apt-get install python-pip
 ```
 
-
 To install package
 
 ```bash
 pip install package
 ```
+
+## Simple prints to command line 
+
+```
+python -c 'print "A"*4'
+```
+
+
+
