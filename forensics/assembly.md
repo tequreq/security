@@ -52,7 +52,9 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 note gets functions are vulnerable
 
-### 
+### Notes
+
+The values between ebp and esp is the stack
 
 ### 
 
@@ -68,7 +70,7 @@ note gets functions are vulnerable
 
 ### References
 
-https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/
+[https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/](https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/)
 
 hacking the art of exploitation
 
