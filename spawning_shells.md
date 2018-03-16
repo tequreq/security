@@ -115,12 +115,19 @@ So if you manage to upgrade to a non-interactive tty-shell you will still have a
 **Using stty**
 
 ```
-ctrl+z (background)
-stty size
-(this will output rows and cols)--for example 48 and 186
-stty raw -echo
-fg (resume background job)
-stty rows 48 cols 186
+# In reverse shell
+$ python -c 'import pty; pty.spawn("/bin/bash")'
+Ctrl-Z
+
+# In Kali
+$ stty raw -echo
+$ fg
+
+# In reverse shell
+$ reset
+$ export SHELL=bash
+$ export TERM=xterm-256color
+$ stty rows <num> columns <cols>
 ```
 
 ## Simple Reverse Shell
@@ -142,4 +149,6 @@ echo 'p=subprocess.call(["/bin/sh","-i"])' >> script.py
 [http://unix.stackexchange.com/questions/122616/why-do-i-need-a-tty-to-run-sudo-if-i-can-sudo-without-a-password](http://unix.stackexchange.com/questions/122616/why-do-i-need-a-tty-to-run-sudo-if-i-can-sudo-without-a-password)  
 [http://netsec.ws/?p=337](http://netsec.ws/?p=337)  
 [http://pentestmonkey.net/blog/post-exploitation-without-a-tty](http://pentestmonkey.net/blog/post-exploitation-without-a-tty)
+
+https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
 
