@@ -1141,6 +1141,7 @@ Below is using metasploit socks & proxychains
 msf auxiliary(server/socks4a)
 SRVPORT 1080
 run
+route add 172.17.0.0/24 1
 
 # On Kali
 nano etc/proxychains.conf
