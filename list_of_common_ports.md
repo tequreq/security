@@ -1170,6 +1170,12 @@ cat /etc/my.cnf
 
 ```
 http://cse.unl.edu/~sscott/ShowFiles/SQL/CheatSheet/SQLCheatSheet.html
+
+
+SHOW DATABASES;
+USE database;
+SHOW TABLES;
+SELECT * FROM table;
 ```
 
 ### Uploading a shell
