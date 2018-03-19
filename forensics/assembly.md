@@ -52,9 +52,11 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) checksec   \#determines what security is enabled
 
-**note** 
+**note**
 
 gets & strcpy functions are vulnerable
+
+check if ASLR is enabled on the host, execute \#ldd /bin/executable \| grep libc   \(if address stays the same then not enabled\)
 
 ### 
 
