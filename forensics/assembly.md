@@ -50,7 +50,21 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) b \*0x0804861A   \#puts a breakpoint at address 0x0804861A
 
-note gets functions are vulnerable
+\(gdb\) checksec   \#determines what security is enabled
+
+**note** 
+
+gets & strcpy functions are vulnerable
+
+### 
+
+### View function calls \(useful when asking for passwords\)
+
+ltrace to view function calls
+
+or
+
+radare
 
 ### Notes
 
