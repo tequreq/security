@@ -124,6 +124,7 @@
   * [Crypto](forensics/crypto.md)
   * [Encrypted Files](forensics/encrypted-files.md)
   * [Assembly](forensics/assembly.md)
+    * [reverse eng shell](forensics/assembly/reverse-eng-shell.md)
 * [Wifi](wifi.md)
   * [WEP](wep.md)
   * [WPS](wps.md)
