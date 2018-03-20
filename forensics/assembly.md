@@ -64,11 +64,11 @@ check if ASLR is enabled on the host, execute \#ldd /bin/executable \| grep libc
 
 ### View function calls \(useful when asking for passwords\)
 
-ltrace to view function calls
+ltrace to view library function calls
 
 or
 
-strace to view function calls \(stack trace\)
+strace to view system function calls \(stack trace\)
 
 or
 
