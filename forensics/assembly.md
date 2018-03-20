@@ -52,6 +52,8 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) checksec   \#determines what security is enabled
 
+\(gdb\) disassemble main   \#disassembles the main function
+
 **note**
 
 gets & strcpy functions are vulnerable
@@ -63,6 +65,10 @@ check if ASLR is enabled on the host, execute \#ldd /bin/executable \| grep libc
 ### View function calls \(useful when asking for passwords\)
 
 ltrace to view function calls
+
+or
+
+strace to view function calls \(stack trace\)
 
 or
 
