@@ -83,6 +83,7 @@
   * [Log Poisoning](log-poisoning.md)
   * [Buffer Overflow Shell](buffer-overflow-shell.md)
   * [Evading WAF](evading-waf.md)
+  * [Fuzzer](fuzzer.md)
 * [Post Exploitation](post_exploitation.md)
   * [Spawning Shells](spawning_shells.md)
   * [BloodHound](bloodhound.md)

