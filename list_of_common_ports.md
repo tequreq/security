@@ -1125,7 +1125,7 @@ This occurs because mysql is configured so that the root user is only allowed to
 ssh port fwd
 
 ```
-#On attack machine
+#On kali
 ssh -L 9000:localhost:3306 user@10.10.10.X
 
 #On kali
