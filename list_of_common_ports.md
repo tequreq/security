@@ -1122,6 +1122,18 @@ This occurs because mysql is configured so that the root user is only allowed to
 
 #### To interact with this remotely try the following:
 
+ssh port fwd
+
+```
+#On attack machine
+ssh -L 9000:localhost:3306 user@10.10.10.X
+
+#On kali
+mysql -h 127.0.0.1 -port 7000 -u root -p
+
+#https://blog.trackets.com/2014/05/17/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples.html
+```
+
 Below is using metasploit meterpreter
 
 ```
