@@ -37,12 +37,74 @@ Break down and disassemble
 ```
 gdb
 
-set disassembly-flavor intrl
+set disassembly-flavor intel
 
 disass main
 ```
 
 review the calls and any cmp and jne functions. May lead to potential passwords which are used in the compare function or jump if not equal.
+
+## **Radare2**
+
+to start
+
+```
+r2 filename
+```
+
+start code analysis
+
+```
+> aaa
+```
+
+to print all fucntions
+
+```
+>afl
+```
+
+to move location to main function \(seek to location of function main\)
+
+```
+>s [name of main function from previous command]
+```
+
+to view the dissassembyl of current function
+
+```
+>pdf
+```
+
+to see visual mode like IDA
+
+```
+>VV
+
+# you can hit ? to view all options within this mode
+```
+
+to run the application with parameters in debug
+
+```
+>ood [parameter]  #initiate
+>dc #execute
+
+```
+
+set a breakpoint
+
+```
+>db 0x00460649
+
+then above two commands to rerun
+```
+
+to view registers
+
+```
+dr
+```
 
 Links
 
