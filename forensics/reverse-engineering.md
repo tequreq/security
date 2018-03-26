@@ -1,5 +1,11 @@
 ## Reverse \(WIP\)
 
+Determine type of file
+
+```
+file filename
+```
+
 High Level Overview of process
 
 ```
@@ -7,8 +13,6 @@ strings
 ```
 
 To view plaintext \(potentially passwords and text printing to screen\)
-
-
 
 Try simple buffers to input functions:
 
@@ -39,10 +43,6 @@ disass main
 ```
 
 review the calls and any cmp and jne functions. May lead to potential passwords which are used in the compare function or jump if not equal.
-
-
-
-
 
 Links
 
