@@ -54,13 +54,28 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) disassemble main   \#disassembles the main function
 
-**note**
+**Note**
 
 gets & strcpy functions are vulnerable
 
 check if ASLR is enabled on the host, execute \#ldd /bin/executable \| grep libc   \(if address stays the same then not enabled\)
 
-### 
+### Change values within executable
+
+```
+if already in gdb and you see a test eax, eax 
+we can modify the value to make this true
+
+set a breakpoint at the test instruction
+
+(gdb)b * 0x0804861A
+(gdb) continue
+(gdb) i r #to verify that eax is not zero
+(gdb) set $eax=0
+(gdb) i r #to verify that eax is now changed to zero
+(gdb) ni  #to continue now
+
+```
 
 ### View function calls \(useful when asking for passwords\)
 
