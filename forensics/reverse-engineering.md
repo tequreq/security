@@ -84,12 +84,19 @@ to see visual mode like IDA
 # you can hit ? to view all options within this mode
 ```
 
+to see visual mode that also shows registers, stack and dissassembly
+
+```
+>V!
+```
+
+
+
 to run the application with parameters in debug
 
 ```
 >ood [parameter]  #initiate
 >dc #execute
-
 ```
 
 set a breakpoint
