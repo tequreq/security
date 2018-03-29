@@ -92,19 +92,21 @@ radare
 
 The values between ebp \(bottom of stack frame\) and esp \(top of stack frame\) is the stack
 
-
-
 **More Random Notes**
 
-Typically DWORD PTR is setting a variable 
+Typically DWORD PTR is setting a variable
 
+For example:
 
+```
+mov DWORD PTR [esp+0x5c], 0x0   #this is setting a variable to 0
+```
 
 push ebp
 
-mov ebp, esp 
+mov ebp, esp
 
-these two setss of instructions are preparing the stack
+these two setss of instructions are preparing the stack
 
 ### 
 
