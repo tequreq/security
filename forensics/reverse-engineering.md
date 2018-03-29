@@ -49,7 +49,7 @@ review the calls and any cmp and jne functions. May lead to potential passwords 
 to start
 
 ```
-r2 filename
+r2 -d filename
 ```
 
 start code analysis
