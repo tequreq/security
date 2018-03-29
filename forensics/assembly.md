@@ -94,7 +94,7 @@ radare
 
 The values between ebp \(bottom of stack frame\) and esp \(top of stack frame\) is the stack
 
-**More Random Notes**
+#### **More Random Notes**
 
 Typically DWORD PTR is setting a variable
 
@@ -104,15 +104,27 @@ For example:
 mov DWORD PTR [esp+0x5c], 0x0   #this is setting a variable to 0
 ```
 
-push ebp
+**Function Prologue**
 
-mov ebp, esp
+`push ebp`
 
-these two setss of instructions are preparing the stack
+`mov ebp, esp`
 
-### 
+`sub ebp, 0x20`
 
-### 
+these sets of instructions are preparing the stack
+
+**Function Epilogue**
+
+leave:
+
+* Combines:
+  * `mov esp, ebp`
+  * `pop ebp`
+
+ret:
+
+* Same as "`pop eip`"
 
 ### References
 
