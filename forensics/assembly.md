@@ -56,7 +56,7 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 **Note**
 
-gets & strcpy functions are vulnerable
+**gets & strcpy** functions are vulnerable
 
 check if ASLR is enabled on the host, execute \#ldd /bin/executable \| grep libc   \(if address stays the same then not enabled\)
 
@@ -74,7 +74,6 @@ set a breakpoint at the test instruction
 (gdb) set $eax=0
 (gdb) i r #to verify that eax is now changed to zero
 (gdb) ni  #to continue now
-
 ```
 
 ### View function calls \(useful when asking for passwords\)
@@ -93,13 +92,19 @@ radare
 
 The values between ebp \(bottom of stack frame\) and esp \(top of stack frame\) is the stack
 
-### 
 
-### 
 
-### 
+**More Random Notes**
 
-### 
+Typically DWORD PTR is setting a variable 
+
+
+
+push ebp
+
+mov ebp, esp 
+
+these two setss of instructions are preparing the stack
 
 ### 
 
