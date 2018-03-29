@@ -4,7 +4,7 @@ remember Syntax:
 
 `operation <destination>, <source>`
 
-Move value from ESP to EBP **then** subtract 8 from ESP and store the value in ESP
+Move value from ESP \(stack pointer\) to EBP\(base pointer\) **then** subtract 8 from ESP and store the value in ESP
 
 `mov    ebp,esp`
 
