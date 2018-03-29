@@ -90,8 +90,6 @@ to see visual mode that also shows registers, stack and dissassembly
 >V!
 ```
 
-
-
 to run the application with parameters in debug
 
 ```
@@ -112,6 +110,8 @@ to view registers
 ```
 dr
 ```
+
+Remember to view help at anytime in radare it's simply "?". Also when in visual mode, use ":" to enter cmd mode and &lt;enter&gt; to exit cmd mode.
 
 Links
 
