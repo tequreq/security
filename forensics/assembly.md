@@ -54,6 +54,8 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) disassemble main   \#disassembles the main function
 
+\(gdb\) del    \#removes all previously created breakpoints
+
 **Note**
 
 **gets & strcpy** functions are vulnerable
