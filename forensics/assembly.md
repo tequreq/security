@@ -1,6 +1,6 @@
 ### Assembly \(x86\)
 
-remember Syntax:
+remember Intel Syntax:
 
 `operation <destination>, <source>`
 
@@ -115,6 +115,8 @@ these two setss of instructions are preparing the stack
 ### References
 
 [https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/](https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/)
+
+https://www.youtube.com/watch?v=T03idxny9jE
 
 hacking the art of exploitation
 
