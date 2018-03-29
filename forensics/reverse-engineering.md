@@ -111,6 +111,12 @@ to view registers
 dr
 ```
 
+to step once
+
+```
+s
+```
+
 Remember to view help at anytime in radare it's simply "?". Also when in visual mode, use ":" to enter cmd mode and &lt;enter&gt; to exit cmd mode.
 
 Links
