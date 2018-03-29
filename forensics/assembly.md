@@ -16,7 +16,7 @@ anything staring with a j is a jump \(depending on the result of a comparison\),
 
 `lea` instruction is an acronym for Load Effective Address,
 
-Below will load the familiar address of EBP minus 4 into the EAX register.
+Below will load the familiar address of EBP minus 4 into the EAX register. Unlike mov which moves the content to the location lea moves the address to the location
 
 `lea      eax,[ebp-4]`
 
@@ -116,7 +116,7 @@ these two setss of instructions are preparing the stack
 
 [https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/](https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/)
 
-https://www.youtube.com/watch?v=T03idxny9jE
+[https://www.youtube.com/watch?v=T03idxny9jE](https://www.youtube.com/watch?v=T03idxny9jE)
 
 hacking the art of exploitation
 
