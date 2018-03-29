@@ -76,6 +76,14 @@ to view the dissassembyl of current function
 >pdf
 ```
 
+To enter visual mode helpful for stepping thorugh and debugging
+
+```
+V
+then 
+pp
+```
+
 to see visual mode like IDA
 
 ```
