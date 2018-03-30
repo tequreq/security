@@ -98,17 +98,23 @@ to see visual mode that also shows registers, stack and dissassembly
 >V!
 ```
 
+to enter command mode
+
+```
+:     #colon enters the command mode 
+```
+
 to run the application with parameters in debug
 
 ```
->ood [parameter]  #initiate
->dc #execute
+>:ood [parameter]  #initiate
+>:dc #execute
 ```
 
 set a breakpoint
 
 ```
->db 0x00460649
+>:db 0x00460649
 
 then above two commands to rerun
 ```
@@ -116,7 +122,7 @@ then above two commands to rerun
 to view registers
 
 ```
-dr
+:dr
 ```
 
 to step once
