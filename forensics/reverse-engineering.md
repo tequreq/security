@@ -101,7 +101,7 @@ to see visual mode that also shows registers, stack and dissassembly
 to enter command mode
 
 ```
-:     #colon enters the command mode 
+:     #colon enters the command mode
 ```
 
 to run the application with parameters in debug
@@ -123,6 +123,14 @@ to view registers
 
 ```
 :dr
+```
+
+to view hex dump of bytes
+
+```
+:pxq    #how hexadecimal quad-words dump (64bit)
+
+:pxw    #show hexadecimal words dump (32bit)
 ```
 
 to step once
