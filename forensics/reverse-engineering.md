@@ -139,6 +139,18 @@ to step once
 s
 ```
 
+to enter cursoe mode \(to manuall set break points
+
+```
+c
+
+use arrows to move around and tab to switch panes
+
+to set breakpoint in cursor mode use
+
+b
+```
+
 Remember to view help at anytime in radare it's simply "?". Also when in visual mode, use ":" to enter cmd mode and &lt;enter&gt; to exit cmd mode.
 
 Links
