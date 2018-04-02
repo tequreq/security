@@ -71,6 +71,10 @@ So this is how you usually crack passwords with john
 
 ```
 john --wordlist=wordlist.txt dump.txt
+
+if need to specify format
+
+john --wordlist=wordlist.txt --format=Raw-MD5 dump.txt
 ```
 
 If you do not find the password you can add the john-rules. Which add numbers and such things to each password.
