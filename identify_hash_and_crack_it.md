@@ -83,7 +83,7 @@ Password wordlists.
 
 ```
 john --wordlist=test.txt --stdout --rules:Jumbo >> mutilated.txt
-crunch 10 10 -t ,%Curtains -o ./worlist.curtains
+
 ```
 
 #### Linux shadow password

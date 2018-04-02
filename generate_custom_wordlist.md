@@ -24,6 +24,14 @@ cat wordlist.txt >> wordlist2.txt
 
 ## Create a custom wordlist
 
+##### Use crunch
+
+```
+crunch 10 10 -t ,%Curtains -o ./worlist.curtains
+
+this would create a 10 character length passwords (min & max are =), and uses the pattern "Upper case/Number/Curtains"
+```
+
 **Html2dic - Build dictionary from html**
 
 You can build a dictionary from a html-page.
