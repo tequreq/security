@@ -8,6 +8,11 @@ file example.fileexample
 
 ```
 exiftool example.fileexample
+
+for GPS info in alternative format (decimal)
+
+exiftool  -c "%.6f" example.fileexample
+
 ```
 
 ## Grab contents of files with weird sizes
