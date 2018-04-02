@@ -48,10 +48,26 @@ tcp.port eq 25
 
 ### Other filters
 
-https://wiki.wireshark.org/DisplayFilters
+[https://wiki.wireshark.org/DisplayFilters](https://wiki.wireshark.org/DisplayFilters)
 
 ### Automatically resolve ip-addresses
 
 Easy  
 [https://ask.wireshark.org/questions/37680/can-wireshark-automatically-resolve-the-ip-address-into-host-names](https://ask.wireshark.org/questions/37680/can-wireshark-automatically-resolve-the-ip-address-into-host-names)
+
+
+
+### Need to save files out of a capture
+
+```
+Try to use File--> Export Objects-->Protocol
+
+If protocol is not listed (for example FTP) then Follow TCP Stream of file data. 
+Filter the conversation so only one side is displayed. (side with data)
+Convert to RAW ("show and save data as" option) and save the contents to disk.
+```
+
+https://crucialsecurity.wordpress.com/2011/02/24/extracting-files-from-packet-captures/
+
+
 
