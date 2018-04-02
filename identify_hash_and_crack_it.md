@@ -83,7 +83,14 @@ Password wordlists.
 
 ```
 john --wordlist=test.txt --stdout --rules:Jumbo >> mutilated.txt
+```
 
+#### View previosuly cracked passwords
+
+```
+View the john.pot file 
+
+usually /root/.john/john.pot
 ```
 
 #### Linux shadow password
