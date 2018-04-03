@@ -8,5 +8,5 @@ Use [https://quipqiup.com/](https://quipqiup.com/)
 
 [https://cryptii.com/affine-cipher](https://cryptii.com/affine-cipher)
 
-http://www.cs.du.edu/[~snarayan/crypt/](http://www.cs.du.edu/~snarayan/crypt/)
+[http://www.cs.du.edu/~snarayan/crypt/](http://www.cs.du.edu/[~snarayan/crypt/]%28http://www.cs.du.edu/~snarayan/crypt/)
 
