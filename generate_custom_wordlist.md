@@ -68,6 +68,24 @@ As we all know few password are just simple words. Many use numbers and special 
 john --wordlist=wordlist.txt --rules --stdout > wordlist-modified.txt
 ```
 
+## to modify an already built wordlist further for specials \(i.e. append two numbers to the end\)
+
+add a custom rule to the john config \( /etc/john/john.conf\)
+
+```
+# Add two numbers to the end of each password 
+[List.Rules:Addtwonum]
+$[0-9]$[0-9]
+```
+
+then utilize it
+
+./john --wordlist=password.lst --stdout --rulesAddtwonum &gt; /home/usr/Desktop/mutatedpswds.lst
+
+https://metasploit.help.rapid7.com/docs/custom-credential-mutations
+
+## 
+
 ## References
 
 [http://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-passwords-part-4-creating-custom-wordlist-with-crunch-0156817/](http://null-byte.wonderhowto.com/how-to/hack-like-pro-crack-passwords-part-4-creating-custom-wordlist-with-crunch-0156817/)
