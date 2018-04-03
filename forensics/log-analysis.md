@@ -33,5 +33,11 @@ This can be done by selecting “Edit > Preferences > Protocols > IEEE 802.11”
 then checking “Enable decryption” and adding the decryption key.
 ```
 
+To discover the wireless network name, aircrack has a wordlist function
+
+```
+aircrack-ng PCAP.cap -w /usr/share/wordlists/rockyou.txt
+```
+
 
 
