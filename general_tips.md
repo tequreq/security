@@ -122,3 +122,27 @@ find / -type f -newermt 2017-08-20 ! -newermt 2017-08-24 2>/dev/null
 
 above example the user flag was uploaded aug 22 2017
 
+
+
+## Remove white space from a file
+
+In order to wipe all whitespace including newlines you can try:
+
+```
+cat file.txt | tr -d " \t\n\r" 
+```
+
+You can also use the character classes defined by tr
+
+```
+cat file.txt | tr -d "[:space:]"
+```
+
+For example, in order to wipe just horizontal white space:
+
+```
+cat file.txt | tr -d "[:blank:]"
+```
+
+
+

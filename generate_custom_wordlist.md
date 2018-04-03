@@ -80,9 +80,9 @@ $[0-9]$[0-9]
 
 then utilize it
 
-./john --wordlist=password.lst --stdout --rulesAddtwonum &gt; /home/usr/Desktop/mutatedpswds.lst
+./john --wordlist=password.lst --stdout --rules:Addtwonum &gt; /home/usr/Desktop/mutatedpswds.lst
 
-https://metasploit.help.rapid7.com/docs/custom-credential-mutations
+[https://metasploit.help.rapid7.com/docs/custom-credential-mutations](https://metasploit.help.rapid7.com/docs/custom-credential-mutations)
 
 ## 
 
