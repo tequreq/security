@@ -12,7 +12,6 @@ exiftool example.fileexample
 for GPS info in alternative format (decimal)
 
 exiftool  -c "%.6f" example.fileexample
-
 ```
 
 ## Grab contents of files with weird sizes
@@ -23,6 +22,12 @@ or
 binwalk -Me examplefile
 or
 steghide extract -sf examplefile
+```
+
+### Digital Invisible Ink Toolkit
+
+```
+http://diit.sourceforge.net/
 ```
 
 ## Additional
