@@ -104,6 +104,12 @@ to enter command mode
 :     #colon enters the command mode
 ```
 
+to exit command mode
+
+```
+[enter key]   #enter key exits command mode
+```
+
 to run the application with parameters in debug
 
 ```
