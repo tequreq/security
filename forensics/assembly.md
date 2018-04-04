@@ -58,7 +58,7 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 **Note**
 
-**gets & strcpy** functions are vulnerable
+**gets & strcpy** functions are vulnerable to overflows
 
 check if ASLR is enabled on the host, execute \#ldd /bin/executable \| grep libc   \(if address stays the same then not enabled\)
 
