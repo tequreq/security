@@ -189,6 +189,20 @@ lea eax,[esp+0x1e]
 in the preceding case the buffer is 30 bytes (decimal version of the hex value 1e)
 ```
 
+if looking for a flag and find a flag type function
+
+```
+(gdb) break main
+
+(gdb) r
+
+(gdb) call <nameofflagfunction)
+
+
+```
+
+
+
 Links
 
 [http://bitvijays.github.io/LFC-BinaryExploitation.html](http://bitvijays.github.io/LFC-BinaryExploitation.html)
