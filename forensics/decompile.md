@@ -1,10 +1,14 @@
 ## Java \(jar\) decompiler
 
 ```
-jd-gui
+jd-gui  (http://jd.benow.ca/)
+
+once you have the code, use an online compiler to determine execution syntax
+
+https://www.tutorialspoint.com/compile_java_online.php
+
+
 ```
-
-
 
 ## Get many lines onto one line with vim
 
