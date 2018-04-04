@@ -58,7 +58,7 @@ start code analysis
 > aaa
 ```
 
-to print all fucntions
+to print all functions
 
 ```
 >afl
@@ -158,6 +158,34 @@ b
 ```
 
 Remember to view help at anytime in radare it's simply "?". Also when in visual mode, use ":" to enter cmd mode and &lt;enter&gt; to exit cmd mode.
+
+## GDB
+
+to start
+
+```
+gdb filename
+```
+
+start with inspecting functions \(**note: gets and strcpy** are vulnerable to buffer overflows\)
+
+```
+> info functions
+```
+
+to find the value of the vulnerable buffer in the instance of a gets or strcpy:
+
+```
+Look for a something similarly to right before the call
+
+lea eax,[esp+0x1e]
+
+in the preceding case the buffer is 30 bytes (decimal version of the hex value 1e)
+```
+
+
+
+
 
 Links
 
