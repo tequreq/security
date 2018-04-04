@@ -198,10 +198,12 @@ if looking for a flag and find a flag type function
 
 (gdb) call <nameofflagfunction)
 
+#If the program required input and thus the call function you can input with the following syntax
+#in this case 1234
+
+(gdb) call <nameofflagfunction)(1234)
 
 ```
-
-
 
 Links
 
