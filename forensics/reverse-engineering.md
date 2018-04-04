@@ -167,6 +167,12 @@ to start
 gdb filename
 ```
 
+disassemble main function
+
+```
+disassemble main
+```
+
 start with inspecting functions \(**note: gets and strcpy** are vulnerable to buffer overflows\)
 
 ```
@@ -182,10 +188,6 @@ lea eax,[esp+0x1e]
 
 in the preceding case the buffer is 30 bytes (decimal version of the hex value 1e)
 ```
-
-
-
-
 
 Links
 
