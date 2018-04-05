@@ -24,11 +24,25 @@ grep -v "text"
 grep -Po "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+"
 ```
 
-Sort and find unique occurrences
+##### Sort and find unique occurrences
 
 ```
 | sort | uniq -c
 ```
+
+##### Count number of lines
+
+```
+wc -l
+```
+
+##### 
+
+##### 
+
+##### 
+
+##### 
 
 ##### Basic wireless PCAP analysis
 
