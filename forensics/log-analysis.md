@@ -12,10 +12,10 @@ cat squid_access.log | awk '{print $3}' | sort | uniq -c
 
 ##### 
 
-##### To pull out everything but text
+##### To pull out everything but text \(always better to filter by what you don't want to ensure you don't accidentally exclude
 
 ```
-grep -v
+grep -v "text"
 ```
 
 ##### To pull out IP addresses
