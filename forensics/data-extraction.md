@@ -52,6 +52,14 @@ file name: artwork.jpg
 crocs.rar:$RAR3$*1*35c0eaaed4c9efb9*463323be*140272*187245*0*crocs.rar*76*35:1::artwork.jpg
 ```
 
+## Crack password of a pdf without password
+
+```
+pdfcrack "cool.pdf" -w /usr/share/wordlists/rockyou.txt
+```
+
+## 
+
 ## Crack password of a KeePass Password Database without password
 
 ```
