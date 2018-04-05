@@ -12,11 +12,23 @@ cat squid_access.log | awk '{print $3}' | sort | uniq -c
 
 ##### 
 
-##### 
+##### To pull out everything but text
 
-##### 
+```
+grep -v
+```
 
-##### 
+##### To pull out IP addresses
+
+```
+grep -Po "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+"
+```
+
+Sort and find unique occurrences
+
+```
+| sort | uniq -c
+```
 
 ##### Basic wireless PCAP analysis
 
