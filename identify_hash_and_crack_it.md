@@ -43,7 +43,7 @@ Example Hashes
 
 [https://hashcat.net/wiki/doku.php?id=example\_hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
-My hash was a Apache md5, so I will use the corresponding code for it, `1600`
+My hash was a SHA1, so I will use the corresponding code for it, `100`
 
 `-a 0` - straight
 
@@ -54,7 +54,7 @@ My hash was a Apache md5, so I will use the corresponding code for it, `1600`
 `/usr/share/hashcat/rules/rockyou-30000.rule` - the wordlist we use
 
 ```
-hashcat -m 11 -a 0 -o found.txt admin.hash /usr/share/hashcat/rules/rockyou-30000.rule
+hashcat -m 100 -a 0 -o found.txt admin.hash /usr/share/hashcat/rules/rockyou-30000.rule
 ```
 
 ### You got a sick GPU bro?
@@ -62,7 +62,7 @@ hashcat -m 11 -a 0 -o found.txt admin.hash /usr/share/hashcat/rules/rockyou-3000
 `-a 0` - Brute-force
 
 ```
-hashcat64.exe -m 11 -a 3 -o found2.txt admin.hash
+hashcat64.exe -m 100 -a 3 -o found2.txt admin.hash
 ```
 
 ### John the ripper
