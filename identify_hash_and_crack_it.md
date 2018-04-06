@@ -43,9 +43,9 @@ Example Hashes
 
 [https://hashcat.net/wiki/doku.php?id=example\_hashes](https://hashcat.net/wiki/doku.php?id=example_hashes)
 
-My hash was a SHA1, so I will use the corresponding code for it, `100`
+My hash was a SHA1, so I will use the corresponding hash code for it, `100`
 
-`-a 0` - straight
+`-a 0` - straight attack mode 
 
 `-o found.txt` - where the cracked hash outputs
 
@@ -59,7 +59,7 @@ hashcat -m 100 -a 0 -o found.txt admin.hash /usr/share/hashcat/rules/rockyou-300
 
 ### You got a sick GPU bro?
 
-`-a 0` - Brute-force
+`-a 3` - Brute-force \(attack mode\)
 
 ```
 hashcat64.exe -m 100 -a 3 -o found2.txt admin.hash
