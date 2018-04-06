@@ -45,7 +45,7 @@ Example Hashes
 
 My hash was a SHA1, so I will use the corresponding hash code for it, `100`
 
-`-a 0` - straight attack mode 
+`-a 0` - straight attack mode
 
 `-o found.txt` - where the cracked hash outputs
 
