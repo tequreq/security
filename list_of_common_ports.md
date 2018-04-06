@@ -205,7 +205,7 @@ nslookup
 attempt zone transfer
 
 ```
-dig axfr @ 10.13.37.10 testsite.com
+dig axfr @10.13.37.10 testsite.com
 ```
 
 ## Port 69 - TFTP
