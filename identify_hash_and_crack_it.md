@@ -124,8 +124,9 @@ findmyhash LM -h 6c3d4c343f999422aad3b435b51404ee:bcd477bfdb45435a34c6a38403ca43
 
 ### Cracking
 
-Crackstation  
-[https://crackstation.net/](https://crackstation.net/)
+Hashes.org
+
+https://hashes.org/search.php
 
 Hashkiller  
 [https://hashkiller.co.uk/](https://hashkiller.co.uk/)
