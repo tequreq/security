@@ -49,7 +49,7 @@ My hash was a SHA1, so I will use the corresponding hash code for it, `100`
 
 `-o found.txt` - where the cracked hash outputs
 
-\`admin.hash" - the hash you want to crack.
+`admin.hash` - the hash you want to crack.
 
 `/usr/share/hashcat/rules/rockyou-30000.rule` - the wordlist we use
 
