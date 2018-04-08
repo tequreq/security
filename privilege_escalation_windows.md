@@ -4,6 +4,10 @@ We now have a low-privileges shell that we want to escalate into a privileged sh
 
 Mubix Post exploitation commands:[ https://docs.google.com/document/d/1U10isynOpQtrIK6ChuReu-K1WHTJm4fgG3joiuz43rw/edit](https://docs.google.com/document/d/1U10isynOpQtrIK6ChuReu-K1WHTJm4fgG3joiuz43rw/edit)
 
+Guide based off of 
+
+https://www.sploitspren.com/2018-01-26-Windows-Privilege-Escalation-Guide/
+
 ## Windows Exploit Suggester
 
 ```
