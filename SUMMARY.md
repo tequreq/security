@@ -127,6 +127,7 @@
   * [Assembly](forensics/assembly.md)
     * [reverse eng shell](forensics/assembly/reverse-eng-shell.md)
   * [Log Analysis](forensics/log-analysis.md)
+  * [Volatility](forensics/volatility.md)
 * [Wifi](wifi.md)
   * [WEP](wep.md)
   * [WPS](wps.md)
