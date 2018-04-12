@@ -1104,6 +1104,7 @@ Username: root
 Password: root or mysql
 
 ```
+mysql --user='admin' --password=admin --database=users -e "SHOW TABLES;"'
 mysql --host=192.168.1.101 -u root -p
 mysql -h <Hostname> -u root
 mysql -h <Hostname> -u root@localhost
