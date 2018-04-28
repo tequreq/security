@@ -32,6 +32,12 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) run                \#starts the program which stops at the breakpoint
 
+\(gdb\) info variables  \#shows all variables and their address
+
+\(gdb\) x/xb &&lt;variable name&gt;    \#shows value of the address to the named variable
+
+\(gdb\) x/xb &lt;variable address&gt;   \#show the value of the variable
+
 \(gdb\) info register eip    \#provides the eip value
 
 \(gdb\) x/10i $eip      \#examins the value of the next 10 instructions after EIP, useful for seeinng how a program starts
@@ -126,7 +132,7 @@ ret:
 
 * Same as "`pop eip`"
 
-### Determine the entry point address when unknown 
+### Determine the entry point address when unknown
 
 i.e. Don't know the name of the "main" / starting function
 
