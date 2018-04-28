@@ -34,9 +34,9 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) info variables  \#shows all variables and their address
 
-\(gdb\) x/xb &&lt;variable name&gt;    \#shows value of the address of the named variable
+\(gdb\) x/4xb &&lt;variable name&gt;    \#examines dword \(32 bits / 4 bytes\) of the address of the named variable
 
-\(gdb\) x/xb &lt;variable address&gt;   \#show the value of the variable
+\(gdb\) x/4xb &lt;variable address&gt;   \#examines the dword \(32 bits / 4 bytes\) the value of the variable
 
 \(gdb\) info register eip    \#provides the eip value
 
