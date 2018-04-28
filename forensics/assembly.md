@@ -126,6 +126,18 @@ ret:
 
 * Same as "`pop eip`"
 
+### Determine the entry point address when unknown 
+
+i.e. Don't know the name of the "main" / starting function
+
+```
+within gdb
+
+(gdb) shell readelf -h <name of the program>
+
+:this will indicate the entry point address, so you can now setup a break point from that address
+```
+
 ### References
 
 [https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/](https://killyp.com/2018/02/25/ctf-tamuctf-2018-pwn1/)
