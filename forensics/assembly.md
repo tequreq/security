@@ -60,7 +60,7 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) info functions  \#shows functions available to use
 
-\(gdb\) call &lt;function name&gt;  \# calls a specific function
+\(gdb\) call examplefunction \(input1, input2\)  \# calls a specific function
 
 \(gdb\) b \*0x0804861A   \#puts a breakpoint at address 0x0804861A
 
