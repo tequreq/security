@@ -54,6 +54,8 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) x/i $eip      \#doing this again examines the new value of eip as hexadecimal after step
 
+\(gdb\) set $eax = 10   \#changes the value of eax to 10
+
 \(gdb\) b \*0x0804861A   \#puts a breakpoint at address 0x0804861A
 
 \(gdb\) checksec   \#determines what security is enabled
