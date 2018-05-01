@@ -56,6 +56,12 @@ gdb -q whatever        \#starts gdb on the whatever file and starts in quiet mod
 
 \(gdb\) set $eax = 10   \#changes the value of eax to 10
 
+\(gdb\) set $cool = 65   \#sets a convienece variable while debugging
+
+\(gdb\) info functions  \#shows functions available to use
+
+\(gdb\) call &lt;function name&gt;  \# calls a specific function
+
 \(gdb\) b \*0x0804861A   \#puts a breakpoint at address 0x0804861A
 
 \(gdb\) checksec   \#determines what security is enabled
