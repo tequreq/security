@@ -17,7 +17,7 @@ To view plaintext \(potentially passwords and text printing to screen\)
 Try simple buffers to input functions:
 
 ```
-python -c 'print "A"*2000"
+python -c 'print "A"*2000'
 ```
 
 to view library calls
@@ -42,7 +42,17 @@ set disassembly-flavor intel
 disass main
 ```
 
-review the calls and any cmp and jne functions. May lead to potential passwords which are used in the compare function or jump if not equal.
+review the calls and any cmp and jne functions. May lead to potential passwords which are used in the compare function or jump if not equal. 
+
+view functions may be an easy win
+
+```
+gdb
+
+info fucntions
+
+call <name of interesting function>
+```
 
 ## **Radare2**
 
@@ -202,7 +212,6 @@ if looking for a flag and find a flag type function
 #in this case 1234
 
 (gdb) call <nameofflagfunction)(1234)
-
 ```
 
 Links
