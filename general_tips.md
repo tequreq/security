@@ -122,27 +122,41 @@ find / -type f -newermt 2017-08-20 ! -newermt 2017-08-24 2>/dev/null
 
 above example the user flag was uploaded aug 22 2017
 
-
-
 ## Remove white space from a file
 
 In order to wipe all whitespace including newlines you can try:
 
 ```
-cat file.txt | tr -d " \t\n\r" 
+cat file.txt | tr -d " \t\n\r"
 ```
 
-You can also use the character classes defined by tr
+You can also use the character classes defined by tr
 
 ```
-cat file.txt | tr -d "[:space:]"
+cat file.txt | tr -d "[:space:]"
 ```
 
-For example, in order to wipe just horizontal white space:
+For example, in order to wipe just horizontal white space:
 
 ```
-cat file.txt | tr -d "[:blank:]"
+cat file.txt | tr -d "[:blank:]"
 ```
 
+## Mounting a folder share from Windows host to VM
 
+```
+root@kali:~/Desktop# cat mount-shared-folders.sh 
+#!/bin/bash
+
+vmware-hgfsclient | while read folder; do
+  echo "[i] Mounting ${folder}   (/mnt/hgfs/${folder})"
+  mkdir -p "/mnt/hgfs/${folder}"
+  umount -f "/mnt/hgfs/${folder}" 2>/dev/null
+  vmhgfs-fuse -o allow_other -o auto_unmount ".host:/${folder}" "/mnt/hgfs/${folder}"
+done
+
+sleep 2s
+```
+
+ 
 
