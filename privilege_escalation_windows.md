@@ -48,7 +48,7 @@ echo %username%
 
 # What users/localgroups are on the machine?
 net users
-net localgroups
+net localgroup
 
 # More info about a specific user. Check if user has privileges.
 net user user1
