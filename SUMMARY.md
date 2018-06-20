@@ -103,6 +103,7 @@
   * [Cover your tracks](clean_up.md)
   * [Cobalt](cobalt.md)
     * [HTML Application Attack](cobalt/html-application-attack.md)
+    * [More fun in AD](cobalt/more-fun-in-ad.md)
   * [MS Advanced Threat Protection and Advanced Threat Analytics Evasion](windows-defender-bypass.md)
 * [Password Cracking](password-cracking.md)
   * [Generate Custom Wordlist](generate_custom_wordlist.md)
