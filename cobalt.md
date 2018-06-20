@@ -48,7 +48,6 @@ Right Click Target --> Explore -->Net View
 or
 Net computers
 net dclist
-
 ```
 
 Find where we are a local admin
@@ -93,6 +92,13 @@ Need four items
 With that Right Click-->Access-->Golden Ticket-->Input Four fields-->Build
 
 Verify it works: #shell dir \\[DC]\C$
+```
+
+Beacon as another user with creds
+
+```
+Right Click Beacon-->SpawnAs-->enter creds
+note for domain account enter domain but for local account enter "." in the domain field
 ```
 
 

@@ -23,6 +23,15 @@ Get-DomainUser -UACFilter DONT_REQ_PREAUTH
 Invoke-ASREPRoast -Verbose | fl
 ```
 
+```
+#Retrieves the plaintext password and other information for accounts pushed through Group Policy Preferences.
+Get-GPPPassword from Powersploit
+
+https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1
+```
+
+
+
 Note: A great tool for cracking hashes is kwprocessor
 
 ```
