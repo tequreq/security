@@ -32,6 +32,12 @@ https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPP
 
 
 
+Note: Great cheat sheets for powerview, powerup,powersploit, etc.
+
+```
+https://github.com/HarmJ0y/CheatSheets
+```
+
 Note: A great tool for cracking hashes is kwprocessor
 
 ```
