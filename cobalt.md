@@ -39,13 +39,16 @@ Right Click Beacon-->Spawn-->Select foreign beacon
 
 Note: Cobalt will spawn an x86 shell, for any post exploit modules make sure to migrate to an x64 process like svchost
 if applicable
-
 ```
 
 View targets available from Initial Target
 
 ```
 Right Click Target --> Explore -->Net View
+or
+Net computers
+net dclist
+
 ```
 
 Find where we are a local admin
