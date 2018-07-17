@@ -39,10 +39,43 @@ or
 Set-ExecutionPolicy Bypass
 ```
 
+## Generate Multiple Lines to print to Screen
+
+Use Here-Strings
+
+You can use here-strings to declare blocks of text. They’re declared just like regular strings except they have an **@** on each end. Instead of being limited to one line, you can declare an entire block or a multiple line string. Here-strings are also useful for making a string composed of the text to execute a command. Examples:
+
+```
+$String1 = @" 
+Get-ChildItem c:\temp 
+"@
+```
+
+
+
+```
+$String2 = @" 
+This is some
+multiple line 
+text! 
+"@
+```
+
+
+
+```
+Write-Host @"
+I am writing cool
+things to the screen
+Arent I cool
+"@
+```
+
+## 
+
 ## References
 
 [https://github.com/samratashok/nishang](https://github.com/samratashok/nishang)
 
-  
 [https://www.youtube.com/watch?v=czJrXiLs0wM](https://www.youtube.com/watch?v=czJrXiLs0wM)
 
