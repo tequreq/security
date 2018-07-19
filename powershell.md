@@ -35,7 +35,7 @@ Select-String
 cat .\filelist.txt | Select-String Music
 ```
 
-Find Juicy Stiff in the File System \(From SANS\)
+**Find Juicy Stiff in the File System \(From SANS\)**
 
 ```
 ls -r C:\PATH\TO\DIRECTORY -file | % {Select String -path $_ -patten STRING}
