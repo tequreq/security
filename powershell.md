@@ -35,5 +35,11 @@ Select-String
 cat .\filelist.txt | Select-String Music
 ```
 
+Find Juicy Stiff in the File System \(From SANS\)
 
+```
+ls -r C:\PATH\TO\DIRECTORY -file | % {Select String -path $_ -patten STRING}
+```
+
+Searches C:\PATH\TO\DIRECTORY for files that contain the "STRING", displaying the file name and the line containing the STRING.
 
