@@ -35,11 +35,13 @@ Select-String
 cat .\filelist.txt | Select-String Music
 ```
 
-**Find Juicy Stiff in the File System \(From SANS\)**
+**Find Juicy Stiff in the File System **
 
 ```
-ls -r C:\PATH\TO\DIRECTORY -file | % {Select String -path $_ -pattern STRING}
+ls -PATH C:\PATH\TO\DIRECTORY -Recurse | Select-String -pattern STRING
 ```
 
 Searches C:\PATH\TO\DIRECTORY for files that contain the "STRING", displaying the file name and the line containing the STRING.
+
+Note: ls is an alias for Get-ChildItem
 
