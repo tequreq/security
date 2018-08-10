@@ -136,4 +136,5 @@
   * [WPS](wps.md)
 * [Physical access to machine](physical_access_to_machine.md)
 * [Literature](littearature.md)
+* [Cheat Sheets](cheat-sheets.md)
 
