@@ -1,5 +1,15 @@
 ## Evading, Bypassing, and Disabling MS Advanced Threat Protection and Advanced Threat Analytics
 
+PowerShell Downgrade Check in Cobalt
+
+```
+powershell Invoke-Command -ComputerName <compname> -ScriptBlock {Get-WindowsFeature PowerShell -V2}
+```
+
+
+
+
+
 [https://www.youtube.com/watch?v=2HNuzUuVyv0](https://www.youtube.com/watch?v=2HNuzUuVyv0)
 
 [https://www.blackhat.com/docs/eu-17/materials/eu-17-Thompson-Red-Team-Techniques-For-Evading-Bypassing-And-Disabling-MS-Advanced-Threat-Protection-And-Advanced-Threat-Analytics.pdf](https://www.blackhat.com/docs/eu-17/materials/eu-17-Thompson-Red-Team-Techniques-For-Evading-Bypassing-And-Disabling-MS-Advanced-Threat-Protection-And-Advanced-Threat-Analytics.pdf)
