@@ -6,9 +6,7 @@ PowerShell Downgrade Check in Cobalt
 powershell Invoke-Command -ComputerName <compname> -ScriptBlock {Get-WindowsFeature PowerShell -V2}
 ```
 
-
-
-
+---
 
 [https://www.youtube.com/watch?v=2HNuzUuVyv0](https://www.youtube.com/watch?v=2HNuzUuVyv0)
 
