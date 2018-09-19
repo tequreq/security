@@ -14,9 +14,9 @@ or
 
 powershell-import /usr/lib/bloodhound/resources/app/Ingestors/SharpHound.ps1
 powershell Invoke-BloodHound -CollectionMethod All -CompressData -RemoveCSV
-    
+
         Runs ACL, ObjectProps, Container, and Default collection methods sequentially, compressed the data to a zip file,
-        and then removes the CSV files from disk
+        and then removes the CSV files from diskMATC
 
 
 GUI side
@@ -37,6 +37,23 @@ if running into to powershell issues then try running straight from SysWOW if no
  where explorer
 
  C:\Windows\explorer.exe
+```
+
+
+
+Note if you cant find a path to DA, most likely dont have enough user data
+
+try the following neo4j script to determine how much of user session data and from there try running sharphound with an hour to 2 hour loop
+
+```
+MATCH (u1:User)
+WITH COUNT(u1) AS totalUsers
+MATCH (c:Computer)-[r:HasSession]->(u2:user)
+RETURN 100 * COUNT(DISTINCT(u2)) / totalUsers AS userPercentage
+```
+
+```
+-c SessionLoop
 ```
 
 References:
