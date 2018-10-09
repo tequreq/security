@@ -1,4 +1,4 @@
-## Execute C\
+## Execute C\#
 
 ### msbuild.exe
 
@@ -74,8 +74,6 @@ Note2: Use metasploit to generate C\# shellcode with the follow command: “msfv
  </UsingTask>
  </Project>
 ```
-
-
 
 [GreatSCT](https://github.com/ConsciousHacker/GreatSCT)--tool to automatically generate the xml file.
 
