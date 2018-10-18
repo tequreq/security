@@ -67,6 +67,9 @@ wfuzz -c -z file,/root/.ZAP/fuzzers/dirbuster/directory-list-2.3-big.txt --sc 20
 ```
 # Gobuster - remove relevant responde codes (403 for example)
 gobuster -u http://192.168.1.101 -w /usr/share/seclists/Discovery/Web_Content/common.txt -s '200,204,301,302,307,403,500' -e
+
+note: to append a forward slash to each item in wordlist, use -f
+note2: another good list is /usr/share/wordlists/dirbuster/directory-list-1.0.txt
 ```
 
 ## WAF - Web application firewall
