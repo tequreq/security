@@ -74,3 +74,43 @@ lib/live/mount/medium/tools/payload.exe
 
 [https://prakharprasad.com/windows-password-cracking-using-john-the-ripper/](https://prakharprasad.com/windows-password-cracking-using-john-the-ripper/)
 
+
+
+### Misc. Physical access to facilities:
+
+Notes:
+
+gates 
+
+fences
+
+cameras
+
+guard force
+
+doors
+
+badge requirements
+
+hours
+
+barriers
+
+
+
+night infiltration
+
+cover infiltration
+
+id cloning
+
+
+
+gather info on google maps
+
+gather info on Linkedin
+
+site owner sites may list / show pictures of common work space
+
+
+
