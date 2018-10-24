@@ -40,6 +40,7 @@
     * [Port Knocking](port_knocking.md)
   * [HTTP - Web Vulnerabilities](web-services.md)
     * [Common Web-services](common_web-services.md)
+    * [Reg Expressions](reg-expressions.md)
     * [WAF - Web Application Firewall](waf_-_web_application_firewall.md)
     * [Attacking the System](lead_to_compromise.md)
       * [Local File Inclusion](local_file_inclusion.md)
