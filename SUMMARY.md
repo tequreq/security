@@ -141,4 +141,5 @@
 * [Literature](littearature.md)
 * [Cheat Sheets](cheat-sheets.md)
 * [Physical](physical.md)
+* [VM Scaling](vm-scaling.md)
 
