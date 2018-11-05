@@ -97,6 +97,7 @@ Why Easier:
 * No more eventual invalid passwords sent by the regular user
 
 * No more lost EAPOL frames when the regular user or the AP is too far away from the attacker
+
 * No more fixing of nonce and replaycounter values required \(resulting in slightly higher speeds\)
 * No more special output format \(pcap, hccapx, etc.\) - final data will appear as regular hex encoded stringairmon-ng check kill
 
@@ -166,4 +167,8 @@ Kicking other people off the network to capture handshakes faster:
 [http://radixcode.com/hackcrack-wifi-password-2015-step-step-tutorial/](http://radixcode.com/hackcrack-wifi-password-2015-step-step-tutorial/)
 
 [https://hashcat.net/forum/thread-7717.html](https://hashcat.net/forum/thread-7717.html)
+
+http://etutorials.org/Networking/802.11+security.+wi-fi+protected+access+and+802.11i/Part+II+The+Design+of+Wi-Fi+Security/Chapter+10.+WPA+and+RSN+Key+Hierarchy/Details+of+Key+Derivation+for+WPA/
+
+
 
