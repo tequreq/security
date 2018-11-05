@@ -4,7 +4,7 @@ There are quite a few different security mechanism on wifi. And each of them req
 
 This is a great guide to the many different ways to hack wifi.
 
-### Checking what networks are avalible
+### Checking what networks are available
 
 `sudo iwlist wlan0 scanning` - scans for wifis
 
@@ -95,6 +95,7 @@ Why Easier:
 * No more eventual retransmissions of EAPOL frames \(which can lead to uncrackable results\)
 
 * No more eventual invalid passwords sent by the regular user
+
 * No more lost EAPOL frames when the regular user or the AP is too far away from the attacker
 * No more fixing of nonce and replaycounter values required \(resulting in slightly higher speeds\)
 * No more special output format \(pcap, hccapx, etc.\) - final data will appear as regular hex encoded stringairmon-ng check kill
@@ -145,11 +146,15 @@ The columns are the following \(all hex encoded\):
 
 ## Further digging
 
-If you want to analyze your pcap for the RSN PMKID, the filter for wirshark is 
+If you want to analyze your pcap for the RSN PMKID, the filter for wirshark is
 
 ```
 wlan.rsn.ie.pmkid
 ```
+
+## Notes
+
+Depending how long you have hcxpcaptool running, you may obtain multiple differing hashes for a single targeted AP. This is because it will keep sending messages and the slight modifications are due to the replay counter and nonce changes in each subsequent submission. The different hashes will all crack to the same password at the end of the day.
 
 ## More Info / References
 
