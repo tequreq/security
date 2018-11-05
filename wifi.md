@@ -45,7 +45,7 @@ So what is all this?
 `#Data` - The number of data-packets that has been sent.  
 `#/s` - Number of data-packets per second.  
 `CH` - Channel  
-`MB` - Maximum speed the AP can handle.   
+`MB` - Maximum speed the AP can handle.  
 `ENC` - Encryption type  
 `CIPHER` - One of CCMP, WRAP, TKIP, WEP, WEP40, or WEP104. Not mandatory, but TKIP is typically used with WPA and CCMP is typically used with WPA2.  
 `PSK` - The authentication protocol used. One of MGT \(WPA/WPA2 using a separate authentication server\(RADIUS\)\), SKA \(shared key for WEP\), PSK \(pre-shared key for WPA/WPA2\), or OPN \(open for WEP\).  
@@ -66,6 +66,7 @@ Then we have another section of information.
 2. Crack the password.
 
 3. Now that we have the handshake recorded we can start to crack it. We can do that by using the program cowpatty.
+
 4. `cowpatty -f /usr/share/wordlists/rockyou.txt -r cowpatty-01.cap -s DKT_D24D81`
    Then we just hope for the best.
 
@@ -90,17 +91,17 @@ Why Easier:
 * No more regular users required - because the attacker directly communicates with the AP \(aka "client-less" attack\)
 
 * No more waiting for a complete 4-way handshake between the regular user and the AP
+
 * No more eventual retransmissions of EAPOL frames \(which can lead to uncrackable results\)
 * No more eventual invalid passwords sent by the regular user
 * No more lost EAPOL frames when the regular user or the AP is too far away from the attacker
 * No more fixing of nonce and replaycounter values required \(resulting in slightly higher speeds\)
 * No more special output format \(pcap, hccapx, etc.\) - final data will appear as regular hex encoded stringairmon-ng check kill
 
-
 1.\) Run hcxdumptool to request the PMKID from the AP and to dump the received frame to a file \(in pcapng format\).
 
 ```
-/opt/hcxdumptool/hcxdumptool -o Target.pcapng -i wlan0 --filterlist=TargetBSSID.txt --filtermode=2
+/opt/hcxdumptool/hcxdumptool -o Target.pcapng -i wlan0 --filterlist=TargetBSSID.txt --filtermode=2
 ```
 
 The TargetSSID.txt files contains the MAC addresses \(BSSIDs\) of the target without colons. Also there is an indicator at the bottom of the interface that states "pwned." This will indicate the number of hashes obtained. It is recommended to have this run for at least 10 minutes.
@@ -115,7 +116,7 @@ The TargetSSID.txt files contains the MAC addresses \(BSSIDs\) of the target wit
  ./hcxpcaptool -z  Target.16800 /opt/hcxdumptool/Target.pcapng
 ```
 
-This takes in the in capture file, parses it and outputs the format \(16800\) in one that hashcat can interpret.
+This takes in the in capture file, parses it and outputs the format \(16800\) in one that hashcat can interpret.
 
 3.\) Run hashcat to crack it.
 
@@ -125,7 +126,23 @@ The TargetSSID.txt files contains the MAC addresses \(BSSIDs\) of the target wit
 
 The above is obviously a simplified version as this can be vastly tailored by information obtained from the target
 
-## More
+## Example hash
+
+```
+2582a8281bf9d4308d6f5731d0e61c61*4604ba734d4e*89acf0e761f4*ed487162465a774bfba60eb603a39f3a
+```
+
+The columns are the following \(all hex encoded\):
+
+* PMKID
+
+* MAC AP
+
+* MAC Station
+
+* ESSID
+
+## More Info / References
 
 Kicking other people off the network to capture handshakes faster:  
 [http://www.aircrack-ng.org/doku.php?id=newbie\_guide](http://www.aircrack-ng.org/doku.php?id=newbie_guide)
@@ -134,7 +151,5 @@ Kicking other people off the network to capture handshakes faster:
 
 [http://radixcode.com/hackcrack-wifi-password-2015-step-step-tutorial/](http://radixcode.com/hackcrack-wifi-password-2015-step-step-tutorial/)
 
-https://hashcat.net/forum/thread-7717.html
-
-
+[https://hashcat.net/forum/thread-7717.html](https://hashcat.net/forum/thread-7717.html)
 
