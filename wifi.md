@@ -67,7 +67,7 @@ Then we have another section of information.
 
 3. Now that we have the handshake recorded we can start to crack it. We can do that by using the program cowpatty.
 
-4. `cowpatty -f /usr/share/wordlists/rockyou.txt -r cowpatty-01.cap -s DKT_D24D81`
+4. `cowpatty -f /usr/share/wordlists/rockyou.txt -r cowpatty-01.cap -s DKT_D24D81`  
    Then we just hope for the best.
 
 ## PMKID
@@ -93,6 +93,7 @@ Why Easier:
 * No more waiting for a complete 4-way handshake between the regular user and the AP
 
 * No more eventual retransmissions of EAPOL frames \(which can lead to uncrackable results\)
+
 * No more eventual invalid passwords sent by the regular user
 * No more lost EAPOL frames when the regular user or the AP is too far away from the attacker
 * No more fixing of nonce and replaycounter values required \(resulting in slightly higher speeds\)
@@ -141,6 +142,14 @@ The columns are the following \(all hex encoded\):
 * MAC Station
 
 * ESSID
+
+## Further digging
+
+If you want to analyze your pcap for the RSN PMKID, the filter for wirshark is 
+
+```
+wlan.rsn.ie.pmkid
+```
 
 ## More Info / References
 
