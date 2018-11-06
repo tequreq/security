@@ -156,7 +156,7 @@ wlan.rsn.ie.pmkid
 
 ## Notes
 
-Depending how long you have hcxpcaptool running, you may obtain multiple differing hashes for a single targeted AP. This is because it will keep sending messages and the slight modifications are due to the replay counter and nonce changes in each subsequent submission. The different hashes will all crack to the same password at the end of the day.
+Depending how long you have hcxpcaptool running, you may obtain multiple differing hashes for a single targeted AP. This is because it will keep sending messages and the slight modifications are due to the replay counter and nonce changes in each subsequent submission. This prevents replay attacks using the hash. However, the different hashes will all crack to the same PSK at the end of the day.
 
 ## More Info / References
 
@@ -171,7 +171,5 @@ Kicking other people off the network to capture handshakes faster:
 
 [http://etutorials.org/Networking/802.11+security.+wi-fi+protected+access+and+802.11i/Part+II+The+Design+of+Wi-Fi+Security/Chapter+10.+WPA+and+RSN+Key+Hierarchy/Details+of+Key+Derivation+for+WPA/](http://etutorials.org/Networking/802.11+security.+wi-fi+protected+access+and+802.11i/Part+II+The+Design+of+Wi-Fi+Security/Chapter+10.+WPA+and+RSN+Key+Hierarchy/Details+of+Key+Derivation+for+WPA/)
 
-https://www.wireshark.org/docs/dfref/w/wlan\_mgt.html
-
-
+[https://www.wireshark.org/docs/dfref/w/wlan\_mgt.html](https://www.wireshark.org/docs/dfref/w/wlan_mgt.html)
 
