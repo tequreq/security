@@ -110,10 +110,6 @@ Why Easier:
 
 The TargetSSID.txt files contains the MAC addresses \(BSSIDs\) of the target without colons. Also there is an indicator at the bottom of the interface that states "pwned." This will indicate the number of hashes obtained. It is recommended to have this run for at least 10 minutes.
 
-```
-/opt/hcxtools/hcxpcaptool -z Target.16800 Target.pcapng
-```
-
 2.\) Run hcxpcaptool to convert the captured data from pcapng format to a hash format accepted by hashcat.
 
 ```
