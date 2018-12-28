@@ -94,6 +94,28 @@ set a breakpoint at the test instruction
 
 ### View function calls \(useful when asking for passwords\)
 
+best one so far is simply nm
+
+e.g. nm ./programiwanttoviewfunctionsof
+
+Note: the functions starting with T we can call but the \(\_\) although built in can also be helpful
+
+then i can try jumping using gdb
+
+gdb -q ./programiwanttoviewfunctionsof
+
+then
+
+\(gdb\) continue
+
+\(gdb\) break main
+
+\(gdb\) run
+
+\(gdb\) jump functionfoundinnmcommand
+
+========================================
+
 ltrace to view library function calls
 
 or
@@ -160,7 +182,5 @@ within gdb
 
 hacking the art of exploitation
 
-https://pen-testing.sans.org/blog/2018/12/11/using-gdb-to-call-random-functions
-
-
+[https://pen-testing.sans.org/blog/2018/12/11/using-gdb-to-call-random-functions](https://pen-testing.sans.org/blog/2018/12/11/using-gdb-to-call-random-functions)
 
