@@ -160,3 +160,7 @@ within gdb
 
 hacking the art of exploitation
 
+https://pen-testing.sans.org/blog/2018/12/11/using-gdb-to-call-random-functions
+
+
+
