@@ -382,7 +382,7 @@ Here is a good guide for how to configure samba:
 mount -t cifs -o user=USERNAME,sec=ntlm,dir_mode=0077 "//10.10.10.10/My Share" /mnt/cifs
 ```
 
-### other option
+### Preffered option \(shows access levels\)
 
 ```
 smbmap -H 192.168.1.102 -u anonymous
