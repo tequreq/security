@@ -108,6 +108,7 @@
   * [MS Advanced Threat Protection and Advanced Threat Analytics Evasion](windows-defender-bypass.md)
   * [FTP fun](ftp-fun.md)
   * [Execute C\#](execute-c.md)
+  * [Vba Macros](vba-macros.md)
 * [Password Cracking](password-cracking.md)
   * [Generate Custom Wordlist](generate_custom_wordlist.md)
   * [Offline Password Cracking](identify_hash_and_crack_it.md)
