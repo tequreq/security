@@ -767,6 +767,12 @@ Default port for Microsoft SQL .
 sqsh -S 192.168.1.101 -U sa
 ```
 
+or using mssqlciint from impacket
+
+```
+mssqlciint.py sa@192.168.1.101 -windows-auth
+```
+
 # Dbeaver
 
 application that interfaces with multiple databases so you don't have to remember the different syntax for the databases
@@ -799,7 +805,7 @@ use auxiliary/scanner/mssql/mssql_ping
 scanner/mssql/mssql_login
 ```
 
-If you have credencials look in metasploit for other modules.
+If you have credentials look in metasploit for other modules.
 
 ## Port 1521 - Oracle database
 
