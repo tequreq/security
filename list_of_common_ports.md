@@ -358,7 +358,7 @@ msf > use exploit/windows/dcerpc/ms03_026_dcom
 
 ## Port 139 and 445- SMB/Samba shares
 
-Samba is a service that enables the user to share files with other machines. It has interoperatibility, which means that it can share stuff between linux and windows systems. A windows user will just see an icon for a folder that contains some files. Even though the folder and files really exists on a linux-server.
+Samba is a service that enables the user to share files with other machines. It has interoperability, which means that it can share stuff between linux and windows systems. A windows user will just see an icon for a folder that contains some files. Even though the folder and files really exists on a linux-server.
 
 ### Connecting
 
@@ -382,13 +382,23 @@ Here is a good guide for how to configure samba:
 mount -t cifs -o user=USERNAME,sec=ntlm,dir_mode=0077 "//10.10.10.10/My Share" /mnt/cifs
 ```
 
-### Preffered option \(shows access levels\)
+### Preferred option \(shows access levels\)
 
 ```
 smbmap -H 192.168.1.102 -u anonymous
 ```
 
-### 
+Lists contents of remote share
+
+```
+smbmap -R <share we can read> -H <targetip>
+```
+
+Download a specific file \(which download to /usr/share/smbmap by default\)
+
+```
+smbmap -R <share we can read> -H <targetip>  -A <name of file> -q
+```
 
 ### Connecting with PSExec
 
