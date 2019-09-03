@@ -42,7 +42,7 @@ set disassembly-flavor intel
 disass main
 ```
 
-review the calls and any cmp and jne functions. May lead to potential passwords which are used in the compare function or jump if not equal. 
+review the calls and any cmp and jne functions. May lead to potential passwords which are used in the compare function or jump if not equal.
 
 view functions may be an easy win
 
@@ -212,6 +212,20 @@ if looking for a flag and find a flag type function
 #in this case 1234
 
 (gdb) call <nameofflagfunction)(1234)
+```
+
+## Ghidra
+
+```
+download ghidra from website (ghidra-sre.org)
+
+./ghirdaRun
+
+create new project
+click dragon(code browser)
+file->import file-> target app
+analyze it->select all->go
+To start off looking at main function: functions->main (on the left hand side under symbol tree)
 ```
 
 Links
