@@ -12,10 +12,13 @@ dirb https://192.168.1.101
 
 # Gobuster 
 
-gobuster -u 10.10.10.X -l -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php -t 20
+gobuster dir -u 10.10.10.X -l -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt  -t 20
 
 - specify relevant response codes
-gobuster -u http://192.168.1.101 -w /usr/share/seclists/Discovery/Web_Content/common.txt -s '200,204,301,302,307,403,500' -e
+gobuster dir -u http://192.168.1.101 -w /usr/share/seclists/Discovery/Web_Content/common.txt -s '200,204,301,302,307,403,500' -e
+
+- simple auth and extenstions
+gobuster dir -u 172.16.1.24 -U username -P Password1234 -w /usr/share/SecLists/Discovery/Web-Content/big.txt -t 20 -x php,txt,pl,sh,asp,aspx,html,json,py,cfm,rb,cgi
 ```
 
 ## About
